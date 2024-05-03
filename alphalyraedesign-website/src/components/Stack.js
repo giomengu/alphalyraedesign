@@ -1,4 +1,5 @@
 import React from 'react';
+
 import useResponsive from './useResponsive'; // Assume useResponsive is in a separate file
 function Stack({ children, direction = 'h',style, title,titleLevel = 'h2', titlestyle}) {
     const isMobile = useResponsive();
@@ -8,8 +9,17 @@ function Stack({ children, direction = 'h',style, title,titleLevel = 'h2', title
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
-        paddingTop: '20px',
-        paddingBottom: '20px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        overflowX: 'auto', // Allow scrolling for horizontal stacks
+        overflowY: 'hidden', // Prevent vertical scrolling unless it's a vertical stack
+        ...style
+        
+    };
+    const containerStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
         overflowX: 'auto', // Allow scrolling for horizontal stacks
@@ -44,8 +54,8 @@ function Stack({ children, direction = 'h',style, title,titleLevel = 'h2', title
     const titleStyle = {
         width: '100%',
         textAlign: 'center',
-        fontSize: '40px',  // You can adjust the font size as needed
-        color: "black",  // Adjust color to fit your design
+        fontSize: '40px',
+        color: "black",
         fontWeight: 700,
         ...titlestyle
     };
@@ -53,7 +63,7 @@ function Stack({ children, direction = 'h',style, title,titleLevel = 'h2', title
     const TitleTag = `${titleLevel}`;
 
     return (
-        <div>
+        <div style={containerStyle}>
             {title && <TitleTag style={titleStyle}>{title}</TitleTag>}
             <div style={baseStyle}>
                 {children}

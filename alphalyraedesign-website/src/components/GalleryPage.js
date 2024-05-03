@@ -4,13 +4,10 @@ import Stack from './Stack';
 import config from '../assets/config'; // Import the config file
 import Gallery from './Gallery';
 function GalleryPage() {
-  const handleButtonClick = (id) => {
-    console.log('Button clicked for card:', id);
-  };
 
   return (
     <Stack direction="v" style={{backgroundColor:config.colors.darkAccent}}>
-      <Gallery> </Gallery>
+      <Gallery modalEnabled={true}> </Gallery>
     </Stack>
       
     );

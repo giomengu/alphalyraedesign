@@ -17,6 +17,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<navigate replace to="/" />} /> // Redirect any unmatched routes to Home
+          <Route path="/alphalyraedesign" element={<navigate replace to="/" />} /> // Redirect any unmatched routes to Home
         </Routes>
       </div>
     </Router>

@@ -1,25 +1,35 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Button({ children,config, onClick, style, className }) {
+function Button({ children, config, onClick, icon }) {
+    // State to handle hover
+    const [isHovered, setIsHovered] = React.useState(false);
+
+    // Style configurations
+    const defaultStyle = {
+        padding: '10px 20px',
+        fontSize: '16px',
+        color: 'white',
+        backgroundColor: isHovered ? config.colors.darkSecondary : config.colors.secondary,
+        border: 'none',
+        borderRadius: '20px',
+        cursor: 'pointer',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        transition: 'background-color 0.3s ease'  // Smooth transition for background color
+    };
+
     return (
         <button
             onClick={onClick}
-            style={{
-                padding: '10px 20px',
-                fontSize: '16px',
-                color: 'white',
-                backgroundColor: config.colors.secondary,
-                border: 'none',
-                borderRadius: '20px',
-                cursor: 'pointer',
-                ...style, // Allows custom styles to be passed and applied
-            }}
-            className={className}
-            onMouseOver={({ target }) => target.style.backgroundColor = config.colors.darkSecondary} // Darker blue on hover
-            onMouseOut={({ target }) => target.style.backgroundColor = config.colors.secondary} // Original color when not hovered
-            onMouseDown={({ target }) => target.style.transform = 'scale(0.95)'} // Scales down the button
-            onMouseUp={({ target }) => target.style.transform = 'scale(1)'} // Scales it back to normal
+            style={defaultStyle}
+            onMouseOver={() => setIsHovered(true)}
+            onMouseOut={() => setIsHovered(false)}
+            onMouseDown={({ target }) => target.style.transform = 'scale(0.95)'}
+            onMouseUp={({ target }) => target.style.transform = 'scale(1)'}
         >
+            {icon && <FontAwesomeIcon icon={icon} style={{ marginRight: '1px',marginLeft: '1px'}} />}
             {children}
         </button>
     );
