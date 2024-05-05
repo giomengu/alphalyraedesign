@@ -3,10 +3,13 @@ import Stack from './Stack';
 import Button from './Button';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-function Card({ image, title, description, buttonText, config,onButtonClick,style,imageStyle,columnsJustification}) {
+import rehypeRaw from 'rehype-raw';
+import config from '../assets/config';
+import MarkdownComponent from './MarkdownComponent';
+function Card({ image, title, description, buttonText, config,onButtonClick,style,imageStyle,columnsJustification,direction='h'}) {
   return (
     <div style={{ 
-        minWidth: '300px', 
+        minWidth: '200px',
         margin: '10px', 
         boxShadow: '0 2px 5px rgba(0,0,0,0.3)',
         borderRadius: '30px',
@@ -15,14 +18,12 @@ function Card({ image, title, description, buttonText, config,onButtonClick,styl
         overflow:'hidden',
         ...style
         }}>
-    <Stack direction='h' style={{justifyContent: columnsJustification}}>
-      <img src={image} alt={title} style={{ width: '50%', height: "auto", objectFit: 'cover',borderRadius: '20px',...imageStyle}} />
-      <div style={{ paddingLeft: '10px',display:'flex',flexDirection:'column',justifyContent:"center",alignItems:'center'}}>
-        <h3 style={{ color: config.colors.accent,whiteSpace: 'pre-wrap' }}>{title}</h3>
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {description}
-            </ReactMarkdown>
-        <Button config={config} onClick={onButtonClick}>{buttonText}</Button>
+    <Stack direction={direction} columnsJustification={columnsJustification} style={{justifyContent: columnsJustification}} config={{config}}>
+      {image && <img src={image} alt={title} style={{  objectFit: 'cover',borderRadius: '20px',...imageStyle}} />}
+      <div style={{ paddingLeft: direction==='h'? '10px':'0px',padding:'10px',display:'flex',flexDirection:'column',justifyContent:"center",alignItems:'center',width:'100%'}}>
+        {title && <h3 style={{ color: config.colors.accent,whiteSpace: 'pre-wrap',width:'100%',textAlign:'center', marginBottom:'0px'}}>{title}</h3>}
+        <MarkdownComponent markdown={description.trim().replace(/[ \t]+/g, ' ')}/>
+        {buttonText && <Button config={config} onClick={onButtonClick}>{buttonText}</Button>}
       </div>
     </Stack>
     </div>

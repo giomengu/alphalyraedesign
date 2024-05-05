@@ -38,3 +38,6 @@
     transform: rotate(360deg);
   }
 }
+p {
+  margin: 5px; /* Reduces vertical spacing to 5px */
+}

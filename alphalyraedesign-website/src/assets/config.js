@@ -11,6 +11,9 @@ const config = {
       backgrounddark: "#22252a",
       text: "#333333"
     },
+    selector:{
+
+    },
     fonts: {
       primary: "'Helvetica Neue', Helvetica, Arial, sans-serif"
     },
@@ -54,8 +57,11 @@ const config = {
         title: 'Michele Molino',
         description: 
 `- Yacht Design
+
 - Yacht Engineering
+
 - Project Management
+
 - Rating Optimization`
         },
         {
@@ -63,13 +69,29 @@ const config = {
         image: ("https://scontent.fcia7-2.fna.fbcdn.net/v/t39.30808-1/277102492_5360755053946489_4990907134283626138_n.jpg?stp=dst-jpg_p200x200&_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=-h0O8aEcK9QQ7kNvgG_8bNF&_nc_ht=scontent.fcia7-2.fna&oh=00_AfBUvYyv5YzjXOGbzgBDh0LAQ6Ls40Crc9kZziYiM1EAfQ&oe=663AF9DE"),
         title: 'Giovanni Mengucci',
         description: 
-        `- Yacht Design
+        `
+- Yacht Design
+
 - Yacht Engineering
+
 - Software Dev.
+
 - Data Analysis`
         },
         // Add more cards as needed
-    ]
+    ],
+    footerCardsData : 
+    {
+        id: 0,
+        image: ("https://www.aemconsultingsrl.it/wp-content/uploads/2021/12/B796F112-76C4-4AAC-9E4F-162C723D0794-1024x1024.png"),
+        title: '',
+        description: 
+        `?#478ec4?Alpha Lyrae Design®?#478ec4? - A & M Consulting s.r.l.
+
+        Via Courmayeur, 12 00135 Roma | Partita Iva 01001521002
+
+`
+    }
   };
   
   export default config;

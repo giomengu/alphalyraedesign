@@ -7,10 +7,15 @@ body {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+p {
+  margin: 5px; /* Reduces vertical spacing to 5px */
+}
+h3 {
+  margin: 5px; /* Reduces vertical spacing to 5px */
 }

@@ -2,25 +2,29 @@ import React from 'react';
 import Card from './Card';
 import Stack from './Stack';
 import config from '../assets/config'; // Import the config file
+import useResponsive from './useResponsive';
+
 function Home() {
   const handleButtonClick = (id) => {
     console.log('Button clicked for card:', id);
   };
-
+  const isMobile = useResponsive()
   return (
     <Stack direction="v" style={{backgroundColor:config.colors.background,padding:'0px'}}>
       <Card
             key={0}
-            image={'https://lh3.googleusercontent.com/PO_-DpSgYBnWubMUcjp4tjXSQuRG-WhwbAP2ZIcXKEPal1IeXh6w3JeR5Ye3ABZKlek67tbMGfnrMBvNgibS_qM=w16383'}
+            image={'https://scontent.fcia7-1.fna.fbcdn.net/v/t39.30808-6/242629728_5169979393028592_8784995202411991108_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=DROXE1gsCVUQ7kNvgHYQtXE&_nc_ht=scontent.fcia7-1.fna&oh=00_AfAX2AFyg_DPweGvYYD8JZuCqbvahBg6pJobQt7ByZyVKw&oe=663D7E39'}
             title={"Chi Siamo"}
-            description={"stocazzo"}
+            description={
+            `
+            `}
             config={config}
-            style={{width:'95%'}}
-            columnsJustification={'space-between'}
-            buttonText={"premimi stronzo"}
+            columnsJustification={isMobile?'space-between':'space-evenly'}
+            buttonText={"premimi"}
+            imageStyle={{width: isMobile? '50vw' : "70vw"}}
             onButtonClick={() => console.log('Clicked', "Chi Siamo")}
           />
-      <Stack direction="auto" style={{backgroundColor:config.colors.darkAccent, width:'100%'}} title={"Our Services"} titleLevel='h1' titlestyle={{color:"white"}}>
+      <Stack direction="auto" style={{backgroundColor:config.colors.darkAccent, width:'100%'}} title={"Our Services"} titleLevel='h1' titleStyle={{color:"white"}} enableScrollButtons='true' config={config}>
         {config.cardsData.map(card => (
           <Card
             key={card.id}
@@ -28,12 +32,15 @@ function Home() {
             title={card.title}
             description={card.description}
             config={config}
+            direction='auto-inv'
             buttonText={card.buttonText}
             onButtonClick={() => console.log('Clicked', card.title)}
+            imageStyle={{width:"150px"}}
+            style={{backgroundColor:'rgba(255,255,255,0.95)'}}
           />
         ))}
       </Stack>
-      <Stack direction="auto" style={{backgroundColor:config.colors.accent, width:'100%'}} title={"Our Team"} titleLevel='h1' titlestyle={{color:"white"}}>
+      <Stack direction="auto" style={{backgroundColor:config.colors.accent, width:'100%'}} title={"Our Team"} titleLevel='h1' titleStyle={{color:"white"}}>
         {config.teamCardsData.map(card => (
           <Card
             key={card.id}
@@ -42,7 +49,8 @@ function Home() {
             description={card.description}
             config={config}
             buttonText={"Contact Card"}
-            imageStyle={{width:"50%"}}
+            imageStyle={{width:"150px"}}
+            style={{backgroundColor:'rgba(255,255,255,0.95)'}}
             onButtonClick={() => console.log('Clicked', card.title)
             }
           />

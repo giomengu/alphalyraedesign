@@ -2,10 +2,12 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import config from '../assets/config'; // Import the config file
 import Button from './Button';
+import Selector from './Selector';
+import useResponsive from './useResponsive'; // Assume useResponsive is in a separate file
 function Navigation() {
+  const isMobile = useResponsive();
   const navigate = useNavigate(); // Correctly initialized navigate function from useNavigate hook
   const navStyle = {
-    position: 'fixed',  // This will fix the navigation bar at the top of the viewport
     top: 0,  // Aligns the navigation bar to the top of the viewport
     left: 0,  // Aligns the navigation bar to the left of the viewport
     right: 0,  // Ensures the navigation bar extends full width
@@ -15,22 +17,34 @@ function Navigation() {
     padding: '10px 20px',
     backgroundColor: config.colors.accent,
     zIndex: 1000,  // Ensures the navigation bar stays on top of other content
-    boxShadow: '0 2px 4px rgba(0,0,0,0.25)'  // Optional, adds shadow for depth
+    boxShadow:'0 2px 4px rgba(0,0,0,0.25)',
+    transition: 'border-radius 0.5s ease, margin 0.5s ease', // Ensures smooth transitions
+    borderRadius: isMobile ? '40px' : '0px',
+    margin: isMobile ? '10px' : '0px'
 };
+const navStyle1 = {
+    position: 'fixed',  // This will fix the navigation bar at the top of the viewport
+    top: 0,  // Aligns the navigation bar to the top of the viewport
+    left: 0,  // Aligns the navigation bar to the left of the viewport
+    right: 0,  // Ensures the navigation bar extends full width
+    background:"linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0))",
+    zIndex: 1000,  // Ensures the navigation bar stays on top of other content
+    
+};
+
 return (
-  <div style={navStyle}>
-      <div>
-          <Link to="/" style={{ textDecoration: 'none' }}>
-              <img src={config.logo} alt="Logo" style={{ height: '80px' }} />
-          </Link>
-      </div>
-      <nav>
-          <ul style={{ listStyleType: 'none', display: 'flex', justifyContent: 'space-around', alignItems: 'center', width: '300px', margin: 0, padding: 0 }}>
-              <li><Link to="/" style={{ textDecoration: 'none', color: 'black' }}>Home</Link></li>
-              <li><Link to="/gallery" style={{ textDecoration: 'none', color: 'black' }}>Gallery</Link></li>
-              <li><Button config={config} onClick={() => navigate('/contact')}>Contact</Button></li>
-          </ul>
-      </nav>
+    <div style={navStyle1}>
+
+        <div style={navStyle}>
+            <div>
+                <Link to="/alphalyraedesign" style={{ textDecoration: 'none' }}>
+                    <img src={config.logo} alt="Logo" style={{ transition: 'height 0.5s ease',height: isMobile ? '50px' : '80px' }} />
+                </Link>
+            </div>
+            {!isMobile && <h1 style={{color:'white'}}>Alpha Lyrae Design</h1>}
+            
+            <Selector isMobile={false} config={config} />
+        </div>
   </div>
 );
 }

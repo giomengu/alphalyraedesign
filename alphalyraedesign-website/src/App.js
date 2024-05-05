@@ -4,22 +4,25 @@ import Navigation from './components/Navigation';
 import Home from './components/HomePage';
 import Gallery from './components/GalleryPage';
 import Contact from './components/ContactPage';
-
+import config from './assets/config';
+import Footer from './components/Footer';
 function App() {
   const mainContentStyle = {
-    marginTop: '100px'  // Adjust this value based on the actual height of your navigation bar
+    paddingTop: '100px',  // Adjust this value based on the actual height of your navigation bar
+    background: config.colors.darkAccent,
+    height:`calc(100vh - 150px)`
 };
   return (
-    <Router>
+    <Router style={{background: config.colors.darkAccent}}>
       <div  style={mainContentStyle}>
         <Navigation />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<navigate replace to="/" />} /> // Redirect any unmatched routes to Home
-          <Route path="/alphalyraedesign" element={<navigate replace to="/" />} /> // Redirect any unmatched routes to Home
+          <Route path="/alphalyraedesign" element={<Home />} />
+          <Route path="/alphalyraedesign/gallery" element={<Gallery />} />
+          <Route path="/alphalyraedesign/contact" element={<Contact />} />
+          <Route path="*" element={<navigate replace to="/alphalyraedesign" />} /> // Redirect any unmatched routes to Home
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );
