@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/alphalyraedesign/static/css/main.bff824bb.css",
-    "main.js": "/alphalyraedesign/static/js/main.2048da01.js",
+    "main.js": "/alphalyraedesign/static/js/main.b21b6037.js",
     "static/js/453.543a287b.chunk.js": "/alphalyraedesign/static/js/453.543a287b.chunk.js",
     "static/media/ALPHALYRAE.jpeg": "/alphalyraedesign/static/media/ALPHALYRAE.f7e3065f0bba90772624.jpeg",
     "static/media/ProductDesign.png": "/alphalyraedesign/static/media/ProductDesign.324c55dff9e770fb00ac.png",
@@ -10,11 +10,11 @@
     "static/media/3dPrinting.png": "/alphalyraedesign/static/media/3dPrinting.ad8b71d63e851d956ef5.png",
     "index.html": "/alphalyraedesign/index.html",
     "main.bff824bb.css.map": "/alphalyraedesign/static/css/main.bff824bb.css.map",
-    "main.2048da01.js.map": "/alphalyraedesign/static/js/main.2048da01.js.map",
+    "main.b21b6037.js.map": "/alphalyraedesign/static/js/main.b21b6037.js.map",
     "453.543a287b.chunk.js.map": "/alphalyraedesign/static/js/453.543a287b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bff824bb.css",
-    "static/js/main.2048da01.js"
+    "static/js/main.b21b6037.js"
   ]
 }
