@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/alphalyraedesign/static/css/main.a20c9a97.css",
-    "main.js": "/alphalyraedesign/static/js/main.28d5b4ce.js",
+    "main.css": "/alphalyraedesign/static/css/main.09e6d8ae.css",
+    "main.js": "/alphalyraedesign/static/js/main.1d95b041.js",
     "static/js/453.543a287b.chunk.js": "/alphalyraedesign/static/js/453.543a287b.chunk.js",
     "static/media/RIB001-RENDERMODEL-5-1.png": "/alphalyraedesign/static/media/RIB001-RENDERMODEL-5-1.a1d4585e15a8c93f941e.png",
     "static/media/ALPHALYRAE.jpeg": "/alphalyraedesign/static/media/ALPHALYRAE.f7e3065f0bba90772624.jpeg",
@@ -10,12 +10,12 @@
     "static/media/YachtDesign.png": "/alphalyraedesign/static/media/YachtDesign.88d1c8ec1b542ecfe446.png",
     "static/media/3dPrinting.png": "/alphalyraedesign/static/media/3dPrinting.ad8b71d63e851d956ef5.png",
     "index.html": "/alphalyraedesign/index.html",
-    "main.a20c9a97.css.map": "/alphalyraedesign/static/css/main.a20c9a97.css.map",
-    "main.28d5b4ce.js.map": "/alphalyraedesign/static/js/main.28d5b4ce.js.map",
+    "main.09e6d8ae.css.map": "/alphalyraedesign/static/css/main.09e6d8ae.css.map",
+    "main.1d95b041.js.map": "/alphalyraedesign/static/js/main.1d95b041.js.map",
     "453.543a287b.chunk.js.map": "/alphalyraedesign/static/js/453.543a287b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a20c9a97.css",
-    "static/js/main.28d5b4ce.js"
+    "static/css/main.09e6d8ae.css",
+    "static/js/main.1d95b041.js"
   ]
 }
