@@ -77,8 +77,7 @@ const config = {
 - Software Dev.
 
 - Data Analysis`
-        },
-        // Add more cards as needed
+        }
     ],
     footerCardsData : 
     {

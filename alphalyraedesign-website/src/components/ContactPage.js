@@ -9,7 +9,7 @@ function ContactPage() {
   };
   const isMobile = useResponsive();
   return (
-      <Stack direction="h" style={{backgroundColor:config.colors.darkAccent, height:`calc(100vh - 250px)`}} titleLevel='h1' titlestyle={{color:"white"}} enableScrollButtons={true}>
+      <Stack direction="h" style={{backgroundColor:config.colors.darkAccent, height:`calc(100vh - 250px)`}} titleLevel='h1' titlestyle={{color:"white"}} enableScrollButtons='true' config={config}>
         {config.teamCardsData.map(card => (
           <Card
             key={card.id}
@@ -17,14 +17,15 @@ function ContactPage() {
             title={card.title}
             description={card.description}
             config={config}
-            style={{backgroundColor:'rgba(255,255,255,0.95)'}}
+            style={{backgroundColor:'rgba(255,255,255,0.95)',...(isMobile ? { minWidth: '90vw',display: 'flex',justifyContent:'center',alignItems:'center'} : {})}}
             onButtonClick={() => console.log('Clicked', card.title)}
-            direction={'auto'} 
-            imageStyle={{width: isMobile ? '35vh' : '300px'}}
+            direction={'v'} 
+            imageStyle={{maxWidth: isMobile ? '35vh' : '300px',...(isMobile ? { width: '35vh',margin:'auto'} : {})}}
+            itemsStyle={{margin:'auto',width:'100%',height:'100%',display:'flex'}}
+
           />
         ))}
       </Stack>
-      
     );
 }
 

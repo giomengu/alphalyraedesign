@@ -3,7 +3,7 @@ import useResponsive from './useResponsive';
 import Button from './Button';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Example icon, replace with the one you need
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'; // Example icon, replace with the one you need
-function Stack({ children, direction = 'h', style, title, titleLevel = 'h2', titleStyle, enableScrollButtons = false, config,AlignItems,columnsJustification='center'}) {
+function Stack({ children, direction = 'h', style, title, titleLevel = 'h2', titleStyle, enableScrollButtons = false, config,AlignItems,columnsJustification='center',parentStyle}) {
     const isMobile = useResponsive();
     const scrollContainerRef = useRef(null);
     const [showScrollButtons, setShowScrollButtons] = useState(false);
@@ -109,12 +109,15 @@ function Stack({ children, direction = 'h', style, title, titleLevel = 'h2', tit
         baseStyle.flexDirection = 'row';
         baseStyle.overflowY = 'auto'; // Enable vertical scroll on mobile
     }
+    if(!enableScrollButtons){
+        baseStyle.overflow = 'hidden';
+    }
     return (
         <div style={containerStyle}>
             {title && <TitleTag style={titleStyles}>{title}</TitleTag>}
             <div ref={scrollContainerRef} style={baseStyle}>
                 {React.Children.map(children, child => (
-                    <div style={{ scrollSnapAlign: 'center',width:'unset'}}>{child}</div>
+                    <div style={{ scrollSnapAlign: 'center',width:'unset',...parentStyle}}>{child}</div>
                 ))}
             </div>
             { enableScrollButtons &&

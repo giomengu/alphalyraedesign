@@ -21,8 +21,9 @@ function Home() {
             config={config}
             columnsJustification={isMobile?'space-between':'space-evenly'}
             buttonText={"premimi"}
-            imageStyle={{width: isMobile? '50vw' : "70vw"}}
+            imageStyle={{width: isMobile? '50vw' : "70vw",maxHeight:'90vh'}}
             onButtonClick={() => console.log('Clicked', "Chi Siamo")}
+            itemsStyle={{margin:'auto',width:'100%',height:'100%'}}
           />
       <Stack direction="auto" style={{backgroundColor:config.colors.darkAccent, width:'100%'}} title={"Our Services"} titleLevel='h1' titleStyle={{color:"white"}} enableScrollButtons='true' config={config}>
         {config.cardsData.map(card => (
@@ -37,6 +38,7 @@ function Home() {
             onButtonClick={() => console.log('Clicked', card.title)}
             imageStyle={{width:"150px"}}
             style={{backgroundColor:'rgba(255,255,255,0.95)'}}
+            itemsStyle={{margin:'auto',width:'100%',height:'100%'}}
           />
         ))}
       </Stack>
@@ -52,6 +54,7 @@ function Home() {
             imageStyle={{width:"150px"}}
             style={{backgroundColor:'rgba(255,255,255,0.95)'}}
             onButtonClick={() => console.log('Clicked', card.title)
+            
             }
           />
         ))}
