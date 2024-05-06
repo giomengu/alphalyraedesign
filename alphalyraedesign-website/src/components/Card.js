@@ -20,13 +20,13 @@ function Card({ image, title, description, buttonText, config,onButtonClick,styl
         }}>
     <Stack direction={direction} columnsJustification={columnsJustification} style={{justifyContent: columnsJustification}} enableScrollButtons={scrollable} config={{config}} parentStyle={itemsStyle}>
     {image && (
-          <div style={{ position: 'relative', width: '100%' }}>
+          <div style={{ position: 'relative', width: '100%',...imageStyle }}>
             <img src={image} alt={title} style={{
               objectFit: 'cover',
               borderRadius: '20px',
               maxHeight: 'calc(100vh - 300px)',
               width: '100%', // Ensure the image covers the container
-              ...imageStyle
+              
             }} />
             <div style={{
               position: 'absolute',
@@ -37,7 +37,7 @@ function Card({ image, title, description, buttonText, config,onButtonClick,styl
             </div>
           </div>
         )}
-      <div style={{ paddingLeft: direction==='h'? '10px':'0px',padding:'10px',display:'flex',flexDirection:'column',justifyContent:"center",alignItems:'center',width:'100%'}}>
+      <div style={{ paddingLeft: direction==='h'? '10px':'0px',padding:'10px',display:'flex',flexDirection:'column',justifyContent:"center",alignItems:'center',width:'100%',height:'100%'}}>
         {title && <h3 style={{ color: config.colors.accent,whiteSpace: 'pre-wrap',width:'100%',textAlign:'center', marginBottom:'0px'}}>{title}</h3>}
         <MarkdownComponent markdown={description.trim().replace(/[ \t]+/g, ' ')}/>
         {buttonText && <Button config={config} onClick={onButtonClick}>{buttonText}</Button>}

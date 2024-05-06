@@ -1,16 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Button from './Button'; // Assuming Button is your custom button component
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-function MultiSelector({ isMobile, config }) {
+function MultiSelector({ isMobile, config, routes,style, CapsuleStyle,onSelect,ActiveButtonStyle}) {
     const navigate = useNavigate();
-    const [activeRoute, setActiveRoute] = useState('/alphalyraedesign'); // Default to home route
+    const location = useLocation(); // Get current location object
+    const [activeRoute, setActiveRoute] = useState(location.pathname); // Set initial active route based on current path
     const [capsuleStyle, setCapsuleStyle] = useState({});
-    const homeRef = useRef(null);
-    const galleryRef = useRef(null);
-    const contactRef = useRef(null);
-    const projectsRef = useRef(null);
-
+    const refs = useRef(routes.map(() => React.createRef()));
     const buttonStyle = {
         padding: '10px 5px',
         fontSize: '16px',
@@ -28,37 +25,40 @@ function MultiSelector({ isMobile, config }) {
 
     const activeButtonStyle = {
         ...buttonStyle,
-        color: 'white'  // And perhaps a different text color
+        color: 'white' ,
+        ...ActiveButtonStyle // And perhaps a different text color
     };
 
     useEffect(() => {
         updateCapsulePosition(activeRoute);
-    }, [activeRoute]);
+    }, [activeRoute, isMobile]);
 
     const handleNavigation = (route) => {
+        onSelect(route);
         navigate(route);
         setActiveRoute(route);
     };
 
     const updateCapsulePosition = (route) => {
-        let activeRef;
-        if (route === '/alphalyraedesign') activeRef = homeRef;
-        else if (route === '/alphalyraedesign/gallery') activeRef = galleryRef;
-        else if (route === '/alphalyraedesign/contact') activeRef = contactRef;
-        else if (route === '/alphalyraedesign/projects') activeRef = projectsRef;
-
-        if (activeRef && activeRef.current) {
-            const { offsetWidth, offsetLeft,offsetHeight,offsetTop} = activeRef.current;
+        console.log(routes);
+        console.log(route);
+        const index = routes.findIndex(r => r.path === route);
+        const ref = refs.current[index];
+        
+        if (ref && ref.current) {
+            const { offsetWidth, offsetLeft, offsetTop } = ref.current;
+            
             setCapsuleStyle({
                 zIndex: 999,
                 height: '19px',
-                width: isMobile ? '100%' : `${offsetWidth + 1}px`,
+                width: isMobile ? '100%' : `${offsetWidth}px`,
                 left: "0",
                 top: '0',
-                transform: isMobile ? `translateY(${offsetTop}px)`:`translateX(${offsetLeft}px)`,
+                transform: isMobile ? `translateY(${offsetTop}px)` : `translateX(${offsetLeft}px)`,
                 padding: '10px 0px',
-                transition: 'transform 0.3s ease',
-                
+                transition: 'transform 0.3s ease,height 0.3s ease,border-radius 0.3s ease',
+                borderRadius: route.subPaths ? '20px 20px 0px 0px' : '20px',
+                ...CapsuleStyle
             });
         }
     };
@@ -72,14 +72,21 @@ function MultiSelector({ isMobile, config }) {
             transition: 'all 0.3s ease-in-out',
             borderRadius: '20px',
             position: 'relative',
-            padding: '0px 0px',
-            boxShadow: `inset -2px -2px 5px rgba(255, 255, 255, 0.3),inset 3px 3px 5px rgba(0, 0, 0, 0.3)`
+            padding: '0px',
+            boxShadow: `inset -2px -2px 5px rgba(255, 255, 255, 0.3), inset 3px 3px 5px rgba(0, 0, 0, 0.3)`,
+            ...style
         }}>
-            <div style={{ position: 'absolute', backgroundColor: config.colors.secondary, borderRadius: '30px', ...capsuleStyle }} />
-            <button style={activeRoute === '/alphalyraedesign' ? activeButtonStyle : buttonStyle} ref={homeRef} onClick={() => handleNavigation('/alphalyraedesign')}>Home</button>
-            <button style={activeRoute === '/alphalyraedesign/gallery' ? activeButtonStyle : buttonStyle} ref={galleryRef} onClick={() => handleNavigation('/alphalyraedesign/gallery')}>Gallery</button>
-            <button style={activeRoute === '/alphalyraedesign/projects' ? activeButtonStyle : buttonStyle} ref={projectsRef} onClick={() => handleNavigation('/alphalyraedesign/projects')}>Projects</button>
-            <button style={activeRoute === '/alphalyraedesign/contact' ? activeButtonStyle : buttonStyle} ref={contactRef} onClick={() => handleNavigation('/alphalyraedesign/contact')}>Contact</button>
+            <div style={{ position: 'absolute', backgroundColor: config.colors.secondary, ...capsuleStyle }}/>
+            {routes.map((route, index) => (
+                <button
+                    key={route.path}
+                    ref={refs.current[index]}
+                    style={activeRoute === route.path ? activeButtonStyle : buttonStyle}
+                    onClick={() => handleNavigation(route.path)}
+                >
+                    {route.label}
+                </button>
+            ))}
         </div>
     );
 }

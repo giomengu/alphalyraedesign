@@ -20,7 +20,7 @@ function ContactPage() {
             style={{backgroundColor:'rgba(255,255,255,0.95)',...(isMobile ? { minWidth: '90vw',display: 'flex',justifyContent:'center',alignItems:'center'} : {})}}
             onButtonClick={() => console.log('Clicked', card.title)}
             direction={'v'} 
-            imageStyle={{maxWidth: isMobile ? '35vh' : '300px',...(isMobile ? { width: '35vh',margin:'auto'} : {})}}
+            imageStyle={{maxWidth: isMobile ? '35vh' : '300px',...(isMobile ? { maxWidth: '30vh',margin:'auto'} : {})}}
             itemsStyle={{margin:'auto',width:'100%',height:'100%',display:'flex'}}
 
           />

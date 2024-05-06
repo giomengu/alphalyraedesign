@@ -41,7 +41,6 @@ const MarkdownComponent = ({ markdown }) => {
     const styledChildren = parseCustomStyles(childrenArray);
     return <p>{styledChildren}</p>;
   };
-
   return (
     <ReactMarkdown
       children={markdown}

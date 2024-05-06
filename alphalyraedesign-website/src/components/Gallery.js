@@ -7,7 +7,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Example i
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'; // Example icon, replace with the one you need
 import Stack from './Stack';
 // Define your images here, or you could pass them as props
-const images = [
+const images_standard = [
     "https://scontent.fcia7-1.fna.fbcdn.net/v/t39.30808-6/242629728_5169979393028592_8784995202411991108_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=DROXE1gsCVUQ7kNvgHYQtXE&_nc_ht=scontent.fcia7-1.fna&oh=00_AfAX2AFyg_DPweGvYYD8JZuCqbvahBg6pJobQt7ByZyVKw&oe=663D7E39",
     "https://scontent.fcia7-2.fna.fbcdn.net/v/t39.30808-6/242653424_5169974453029086_7451598415045420395_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=HBwO2EbygiQQ7kNvgG6jxuz&_nc_ht=scontent.fcia7-2.fna&oh=00_AfDHdvR4CnCyAkAD-JJpQG72Fr8soKN0T-FzCkDK-pShmA&oe=663D538E",
     "https://scontent.fcia7-1.fna.fbcdn.net/v/t39.30808-6/242651758_5170216536338211_4968916256311060243_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=xt06Qfzx6h0Q7kNvgHiFAv3&_nc_ht=scontent.fcia7-1.fna&oh=00_AfA-I40dO5fnd5-Wn31TbM1zwbdXb87KNnFJNPcCJww7xQ&oe=663D7D03",
@@ -28,7 +28,7 @@ const images = [
     // Add as many images as you want
 ];
 
-function Gallery({modalEnabled=false,style}) {
+function Gallery({modalEnabled=false,style, images=images_standard}) {
     const isMobile = useResponsive()
     const [currentIndex, setCurrentIndex] = useState(null);
     const openModal = (index) => {
