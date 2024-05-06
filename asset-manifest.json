@@ -1,9 +1,15 @@
 {
   "files": {
     "main.css": "/alphalyraedesign/static/css/main.09e6d8ae.css",
-    "main.js": "/alphalyraedesign/static/js/main.c5f02889.js",
+    "main.js": "/alphalyraedesign/static/js/main.533fbfbb.js",
     "static/js/453.543a287b.chunk.js": "/alphalyraedesign/static/js/453.543a287b.chunk.js",
     "static/media/RIB001-RENDERMODEL-5-1.png": "/alphalyraedesign/static/media/RIB001-RENDERMODEL-5-1.a1d4585e15a8c93f941e.png",
+    "static/media/RIB001-RENDERMODEL-5-2.png": "/alphalyraedesign/static/media/RIB001-RENDERMODEL-5-2.1b97eef4a98e458315c3.png",
+    "static/media/RIB001-RENDERMODEL-5-6.png": "/alphalyraedesign/static/media/RIB001-RENDERMODEL-5-6.59cbb96dafb6d6606c78.png",
+    "static/media/RIB001-RENDERMODEL-5-7.png": "/alphalyraedesign/static/media/RIB001-RENDERMODEL-5-7.8900ef04cbec99b87a89.png",
+    "static/media/RIB001-RENDERMODEL-5-3.png": "/alphalyraedesign/static/media/RIB001-RENDERMODEL-5-3.f9f7b97965386bf53c7e.png",
+    "static/media/RIB001-RENDERMODEL-5-4.png": "/alphalyraedesign/static/media/RIB001-RENDERMODEL-5-4.ba7721ac18cf713b3ea5.png",
+    "static/media/RIB001-RENDERMODEL-5-5.png": "/alphalyraedesign/static/media/RIB001-RENDERMODEL-5-5.e6285dd8d46270475ec3.png",
     "static/media/ALPHALYRAE.jpeg": "/alphalyraedesign/static/media/ALPHALYRAE.f7e3065f0bba90772624.jpeg",
     "static/media/ProductDesign.png": "/alphalyraedesign/static/media/ProductDesign.324c55dff9e770fb00ac.png",
     "static/media/projectManagment.png": "/alphalyraedesign/static/media/projectManagment.dc5bc91fa1074babbf36.png",
@@ -11,11 +17,11 @@
     "static/media/3dPrinting.png": "/alphalyraedesign/static/media/3dPrinting.ad8b71d63e851d956ef5.png",
     "index.html": "/alphalyraedesign/index.html",
     "main.09e6d8ae.css.map": "/alphalyraedesign/static/css/main.09e6d8ae.css.map",
-    "main.c5f02889.js.map": "/alphalyraedesign/static/js/main.c5f02889.js.map",
+    "main.533fbfbb.js.map": "/alphalyraedesign/static/js/main.533fbfbb.js.map",
     "453.543a287b.chunk.js.map": "/alphalyraedesign/static/js/453.543a287b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.09e6d8ae.css",
-    "static/js/main.c5f02889.js"
+    "static/js/main.533fbfbb.js"
   ]
 }
