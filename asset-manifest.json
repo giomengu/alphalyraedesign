@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/alphalyraedesign/static/css/main.09e6d8ae.css",
-    "main.js": "/alphalyraedesign/static/js/main.6959659a.js",
+    "main.js": "/alphalyraedesign/static/js/main.e228d403.js",
     "static/js/453.543a287b.chunk.js": "/alphalyraedesign/static/js/453.543a287b.chunk.js",
     "static/media/RIB001-RENDERMODEL-5-1.png": "/alphalyraedesign/static/media/RIB001-RENDERMODEL-5-1.a1d4585e15a8c93f941e.png",
     "static/media/RIB001-RENDERMODEL-5-2.png": "/alphalyraedesign/static/media/RIB001-RENDERMODEL-5-2.1b97eef4a98e458315c3.png",
@@ -17,11 +17,11 @@
     "static/media/3dPrinting.png": "/alphalyraedesign/static/media/3dPrinting.ad8b71d63e851d956ef5.png",
     "index.html": "/alphalyraedesign/index.html",
     "main.09e6d8ae.css.map": "/alphalyraedesign/static/css/main.09e6d8ae.css.map",
-    "main.6959659a.js.map": "/alphalyraedesign/static/js/main.6959659a.js.map",
+    "main.e228d403.js.map": "/alphalyraedesign/static/js/main.e228d403.js.map",
     "453.543a287b.chunk.js.map": "/alphalyraedesign/static/js/453.543a287b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.09e6d8ae.css",
-    "static/js/main.6959659a.js"
+    "static/js/main.e228d403.js"
   ]
 }
