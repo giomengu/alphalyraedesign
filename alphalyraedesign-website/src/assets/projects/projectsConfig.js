@@ -32,7 +32,7 @@ const projects =
                         ]
                         , 
                         buttonText: 'More Info',
-                        markdownFile: `alphalyraedesign/projects/pyrgi580.md`
+                        markdownFile: `./projects/pyrgi580.md`
                 },
                 {
                         id: 1,
