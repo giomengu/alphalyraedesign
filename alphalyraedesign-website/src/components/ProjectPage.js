@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Stack from './Stack';
 import config from '../assets/config';
 import Gallery from './Gallery';
 import MarkdownComponent from './MarkdownComponent';
 import Card from './Card';
 function ProjectPage({ project }) {
-
+    const [markdownFileContent, setMarkdownFileContent] = useState('');
     if (!project) {
         return <div>Project not found</div>;
     }
-
+    
+    const fetchMarkdown = (filePath) => {
+        fetch(filePath)
+          .then(response => response.text())
+          .then(text => setMarkdownFileContent(text))
+          .catch(error => console.error('Error loading the markdown file:', error));
+        
+    };
+    fetchMarkdown(project.markdownFile);
     return (
         <Stack 
             direction="v" 
@@ -37,6 +45,9 @@ function ProjectPage({ project }) {
             </Stack>
             {project.markdown && 
                 <Card config={config} style={{}} direction='v' description={project.markdown}/>
+            }
+            {!project.markdown && project.markdownFile &&
+                <Card config={config} style={{}} direction='v' description={markdownFileContent}/>
             }
             {project.gallery && <Gallery style={{}} modalEnabled={true} images={project.gallery}> </Gallery>}
         </Stack>

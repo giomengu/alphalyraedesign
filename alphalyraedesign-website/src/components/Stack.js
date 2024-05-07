@@ -171,7 +171,7 @@ function Stack({ children, direction = 'h', style, title, titleLevel = 'h2', tit
     }
     if(!enableScrollButtons){
         baseStyle.overflow = 'hidden';
-        baseStyle.justifyContent = 'center';
+        baseStyle.justifyContent = columnsJustification;
     }else{
         baseStyle.overflow = 'scroll';
         

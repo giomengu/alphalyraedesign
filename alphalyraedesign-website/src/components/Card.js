@@ -38,7 +38,7 @@ function Card({ image, title, description, buttonText, config,onButtonClick,styl
             </div>
           </div>
         )}
-      <div style={{ paddingLeft: direction==='h'? '10px':'0px',padding:'10px',display:'flex',flexDirection:'column',justifyContent:"center",alignItems:'center',width:'100%',height:'100%'}}>
+      <div style={{ paddingLeft: direction==='h'? '10px':'0px',padding:'10px',display:'flex',flexDirection:'column',justifyContent:"center",alignItems:'center'}}>
         {title && <h3 style={{ color: config.colors.accent,whiteSpace: 'pre-wrap',width:'100%',textAlign:'center', marginBottom:'0px'}}>{title}</h3>}
         <MarkdownComponent markdown={description}/>
         {buttonText && <Button config={config} onClick={onButtonClick}>{buttonText}</Button>}
