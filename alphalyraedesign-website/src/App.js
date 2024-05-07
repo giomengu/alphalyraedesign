@@ -9,6 +9,10 @@ import Footer from './components/Footer';
 import ProjectsPage from './components/ProjectsPage';
 import ProjectPage from './components/ProjectPage';
 import projectsConfig from './assets/projects/projectsConfig';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faImage } from '@fortawesome/free-solid-svg-icons';
+import { faFolder } from '@fortawesome/free-solid-svg-icons';
 function App() {
   const mainContentStyle = {
     paddingTop: '100px',  // Adjust this value based on the actual height of your navigation bar
@@ -16,16 +20,16 @@ function App() {
     height: `calc(100vh - 150px)`
   };
   const routes = [
-    { path: '/', label: 'Home' },
-    { path: '/gallery', label: 'Gallery' },
-    { path: '/projects', label: 'Projects', standardPage: ProjectPage,
+    { path: '/', label: 'Home',icon:faHouse },
+    { path: '/gallery', label: 'Gallery',icon:faImage },
+    { path: '/projects', label: 'Projects', icon: faFolder,standardPage: ProjectPage,
     subPaths: projectsConfig.map(project => (
         {label:project.title,
-        path:`'/projects'/${project.nameid}`, 
+        path:`/projects/${project.nameid}`, 
         project}
       )),
     },
-    { path: '/contact', label: 'Contact' }
+    { path: '/contact', label: 'Contact',icon:faUser}
   ];
   const sub = routes.filter(route => route.subPaths).map(route => route.subPaths.map(subPath =>
     `${route.path}/${subPath.path}`

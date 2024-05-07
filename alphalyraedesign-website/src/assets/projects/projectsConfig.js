@@ -31,7 +31,24 @@ const projects =
                                 require("./pyrgi580/RIB001-RENDERMODEL-5-7.png")
                         ]
                         , 
-                        buttonText: 'More Info'
+                        buttonText: 'More Info',
+                        markdown: `
+                        The 
+                        ***Pyrgi 580***
+                        is a modern and ***highly configurable*** Work Rib
+
+                        
+                        Multiple Configurations:
+                        
+                        - Coach Boat
+
+                        - Fishing Boat
+
+                        - Sport Boat
+
+                        This is a [link](https://example.com) and this is a [button-inline-small:Click me!](https://example.com).
+                        Built @ [Wip Performance Boats](https://www.facebook.com/wipboats/)
+                        `,
                 },
                 {
                         id: 1,

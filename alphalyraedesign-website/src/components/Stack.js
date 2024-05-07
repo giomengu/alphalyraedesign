@@ -123,8 +123,8 @@ function Stack({ children, direction = 'h', style, title, titleLevel = 'h2', tit
         display: 'flex',
         justifyContent: columnsJustification,
         flexDirection: direct === 'v' ? 'column' : 'row',
-        overflowX: direct === 'h' ? 'auto' : 'hidden',
-        overflowY: direct === 'v' ? 'auto' : 'hidden',
+        overflowX: direct === 'h' ? enableScrollButtons?'auto':'hidden' : 'hidden',
+        overflowY: direct === 'v' ? enableScrollButtons?'auto':'hidden' : 'hidden',
         scrollSnapType: direct === 'h' ? 'x mandatory' : 'none',
         alignItems: AlignItems
     };
@@ -171,9 +171,10 @@ function Stack({ children, direction = 'h', style, title, titleLevel = 'h2', tit
     }
     if(!enableScrollButtons){
         baseStyle.overflow = 'hidden';
+        baseStyle.justifyContent = 'center';
     }else{
         baseStyle.overflow = 'scroll';
-        baseStyle.justifyContent = 'flex-start';
+        
     }
     return (
         <div style={containerStyle}>
@@ -186,13 +187,13 @@ function Stack({ children, direction = 'h', style, title, titleLevel = 'h2', tit
             { enableScrollButtons &&
                 <div style={{display:'flex',padding:'10px'}}>
                 {config && enableScrollButtons && showScrollButtons && direct === 'h' && 
-                <Button icon={faChevronLeft} config={config} style={{...buttonStyle,borderRadius:'20px 0px 0px 20px'}} onClick={() => scroll('left')} disabled={isAtStart}></Button>
+                <Button inset={false} icon={faChevronLeft} config={config} style={{...buttonStyle,borderRadius:'20px 0px 0px 20px'}} onClick={() => scroll('left')} disabled={isAtStart}></Button>
                 }
                 {!isMobile && config && enableScrollButtons && showScrollButtons && direct === 'h' && 
-                <Button config={config} style={{...buttonStyle,borderRadius:'0px 0px 0px 0px'}}>{currentItemIndex+1} of {itemCount}</Button>
+                <Button inset={false} config={config} style={{...buttonStyle,borderRadius:'0px 0px 0px 0px'}}>{currentItemIndex+1} of {itemCount}</Button>
                 }
                 {config && enableScrollButtons && showScrollButtons && direct === 'h' && 
-                <Button icon={faChevronRight} config={config} style={{...buttonStyle,borderRadius:'0px 20px 20px 0px'}} onClick={() => scroll('right')} disabled={isAtEnd}></Button>
+                <Button inset={false} icon={faChevronRight} config={config} style={{...buttonStyle,borderRadius:'0px 20px 20px 0px'}} onClick={() => scroll('right')} disabled={isAtEnd}></Button>
                 }
                 </div>
             }   

@@ -1,7 +1,9 @@
+
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
-
+import config from '../assets/config';
+import Button from './Button';
 const MarkdownComponent = ({ markdown }) => {
   // Function to parse custom styles within a given array of content parts
   const parseCustomStyles = (parts) => {
@@ -41,12 +43,38 @@ const MarkdownComponent = ({ markdown }) => {
     const styledChildren = parseCustomStyles(childrenArray);
     return <p>{styledChildren}</p>;
   };
+  const LinkRenderer = ({ node, ...props }) => (
+    <a href={props.href} target="_blank" rel="noopener noreferrer" style={{ textEmphasis:3, color: config.colors.secondary, textDecoration: 'underline' }}>
+      {props.children}
+    </a>
+  );
+  // Button renderer, assuming links with "button:" are buttons
+  const ButtonRenderer = ({ node, ...props }) => {
+    if (props.children.startsWith("button")) {
+      const buttonProp = props.children.split('button')[1]; // Strip "button:" prefix
+      const buttonText = buttonProp.split(':')[1]; // Strip "button:" prefix
+      const buttonStyle = buttonProp.split(':')[0]; // Strip "button:" prefix
+      const buttonUrl = props.href; // Strip "button:" prefix
+      switch(buttonStyle){
+        case '-inline-small' : return <Button style={{display: '',paddingTop:'5px',paddingBottom:'5px'}} config={config} onClick={() => alert(buttonUrl)}>{buttonText}</Button>;
+        case '-inline' : return <Button style={{display: ''}} config={config} onClick={() => alert(buttonText)}>{buttonText}</Button>;
+      }
+      return <Button config={config} onClick={() => alert(buttonUrl)}>{buttonText}</Button>;
+      
+    }else{
+      return <a href={props.href} target="_blank" rel="noopener noreferrer" style={{ textEmphasis:3, color: config.colors.secondary, textDecoration: 'underline' }}>
+      {props.children}
+    </a>
+    }
+  };
+
   return (
     <ReactMarkdown
-      children={markdown}
+      children={markdown.trim().replace(/[ \t]+/g, ' ')}
       remarkPlugins={[gfm]}
       components={{
-        p: Paragraph
+        p: Paragraph,
+        a: ButtonRenderer
       }}
     />
   );

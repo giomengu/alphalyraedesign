@@ -16,10 +16,12 @@ function Footer() {
             image={!isMobile ? config.footerCardsData.image : ''}
             description={config.footerCardsData.description}
             config={config}
-            style={{backgroundColor:'rgba(255,255,255,0.95)'}}
+            style={{backgroundColor:'rgba(255,255,255,0.95)',overflow:'hidden'}}
             onButtonClick={() => console.log('Clicked')}
             direction={'auto'} 
-            imageStyle={{height: isMobile ? '0' : '90px',width: isMobile ? '0' : '90px'}}
+            enableScrollButtons = {false}
+            imageContainerStyle={{height: isMobile ? '0' : '90px', width: isMobile ? '0' : '90px'}}
+            imageStyle={{boxShadow: ` 0px 0px 0px rgba(200, 200, 200,0.3)`}}
           />
       </Stack>
       

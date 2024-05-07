@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Button({ children, config, onClick, icon ,style,disabled,...props}) {
+function Button({ children, config, onClick, icon ,style,disabled,inset=true,...props}) {
     // State to handle hover
     const [isHovered, setIsHovered] = React.useState(false);
     const defaultColors = {
@@ -23,6 +23,7 @@ function Button({ children, config, onClick, icon ,style,disabled,...props}) {
         alignItems: 'center',
         justifyContent: 'center',
         transition: 'background-color 0.3s ease',  // Smooth transition for background color
+        boxShadow: inset ? `inset -2px -2px 5px rgba(214, 255, 111,0.3), inset 3px 3px 5px rgba(79, 94, 41, 0.6)`: ` -2px -2px 5px rgba(214, 255, 111,0.3), 3px 3px 5px rgba(79, 94, 41, 0.6)`,
         ...style
     };
     const disabledStyle = {
