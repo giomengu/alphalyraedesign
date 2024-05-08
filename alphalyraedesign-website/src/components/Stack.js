@@ -168,13 +168,14 @@ function Stack({ children, direction = 'h', style, title, titleLevel = 'h2', tit
     if (direct === 'h'){
         baseStyle.flexDirection = 'row';
         baseStyle.overflowY = 'auto'; // Enable vertical scroll on mobile
+        
     }
     if(!enableScrollButtons){
         baseStyle.overflow = 'hidden';
         baseStyle.justifyContent = columnsJustification;
     }else{
         baseStyle.overflow = 'scroll';
-        
+        baseStyle.justifyContent = 'start';
     }
     return (
         <div style={containerStyle}>

@@ -24,13 +24,14 @@ function ProjectPage({ project }) {
             style={{backgroundColor:config.colors.darkAccent,marginTop:'10px',width:'100%'}}
             title={project.title}
             titleStyle={{color:'white'}}
+            justifyContent='center'
+            parentStyle={{display:'flex',justifyContent:'center'}}
         >
             <Stack 
                 direction='h'
                 enableScrollButtons='true'
                 style={{backgroundColor:config.colors.accent, width:'100%'}}
                 config={config}
-
             >
                 {project.gallery && project.gallery.map(image => (
                     <div>
@@ -47,7 +48,7 @@ function ProjectPage({ project }) {
                 <Card config={config} style={{}} direction='v' description={project.markdown}/>
             }
             {!project.markdown && project.markdownFile &&
-                <Card config={config} style={{}} direction='v' description={markdownFileContent}/>
+                <Card config={config} style={{width:'fit-content'}} direction='h' description={markdownFileContent}/>
             }
             {project.gallery && <Gallery style={{}} modalEnabled={true} images={project.gallery}> </Gallery>}
         </Stack>

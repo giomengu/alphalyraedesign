@@ -32,7 +32,7 @@ const projects =
                         ]
                         , 
                         buttonText: 'More Info',
-                        markdownFile: `./projects/pyrgi580.md`
+                        markdownFile: `${process.env.PUBLIC_URL}/projects/pyrgi580.md`
                 },
                 {
                         id: 1,
