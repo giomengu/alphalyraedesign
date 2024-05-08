@@ -4,6 +4,7 @@ import config from '../assets/config'; // Import the config file
 import Button from './Button';
 import Selector from './Selector';
 import useResponsive from './useResponsive'; // Assume useResponsive is in a separate file
+import useWrapping from './useWrapping';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 const sroutes = [
@@ -13,27 +14,31 @@ const sroutes = [
     { path: '/contact', label: 'Contact' }
 ];
 function Navigation({routes=sroutes}) {
-  const isMobile = useResponsive();
-  const navigate = useNavigate(); // Correctly initialized navigate function from useNavigate hook
-  const [selectedRoute, setSelectedRoute] = useState(null);
-  const [showSubMenu, setShowSubMenu] = useState(false);
-  const navBarRef = useRef(null);
-  const [navBarHeight, setNavBarHeight] = useState(0);
+    const isMobile = useResponsive();
+    const navigate = useNavigate(); // Correctly initialized navigate function from useNavigate hook
+    const isWrap = useWrapping(document.querySelector('.navBar'));
+    const [selectedRoute, setSelectedRoute] = useState(null);
+    const [showSubMenu, setShowSubMenu] = useState(false);
+    const navBarRef = useRef(null);
+    const [navBarHeight, setNavBarHeight] = useState(0);
+
+
   const navStyle = {
     position: 'fixed', 
     top: 0,  // Aligns the navigation bar to the top of the viewport
     left: 0,  // Aligns the navigation bar to the left of the viewport
     right: 0,  // Ensures the navigation bar extends full width
     display: 'flex',
+    flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '10px 20px',
+    padding: isMobile ? '10px 15px' : '10px 20px',
     backgroundColor: config.colors.accent,
     zIndex: 2,  // Ensures the navigation bar stays on top of other content
     boxShadow:'0 2px 4px rgba(0,0,0,0.25)',
     transition: 'border-radius 0.5s ease, margin 0.5s ease', // Ensures smooth transitions
     borderRadius: isMobile ? selectedRoute && showSubMenu ?'40px 40px 0px 0px' : '40px' : '0px',
-    margin: isMobile ? '10px' : '0px'
+    margin: isMobile ? '5px' : '0px'
 };
 const navStyle1 = {
     position: 'fixed',  // This will fix the navigation bar at the top of the viewport
@@ -43,6 +48,8 @@ const navStyle1 = {
     background:"linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0))", // Ensures the navigation bar stays on top of other content
     zIndex: 1, 
 };
+
+// Usage:
 useEffect(() => {
     if (navBarRef.current) {
         setNavBarHeight(navBarRef.current.clientHeight); // Update the height when the component mounts or updates
@@ -69,13 +76,16 @@ const handleSelect = (route) => {
 return (
     <div style={navStyle1}>
 
-        <div className="navBar" ref={navBarRef} style={navStyle}>
+        <div className="navBar" ref={navBarRef} style={{...navStyle, justifyContent: isWrap ? 'center' :  'space-between'}}>
+            {!isWrap &&
             <div>
                 <Link to="/" style={{ textDecoration: 'none' }}>
-                    <img src={config.logo} alt="Logo" style={{ transition: 'height 0.5s ease',height: isMobile ? '50px' : '80px' }} />
+                    <img src={config.logo} alt="Logo" style={{ transition: 'height 0.5s ease',height: isMobile ? isWrap ? '30px' :  '45px' : '80px' }} />
                 </Link>
             </div>
+            }
             {!isMobile && <h1 style={{color:'white'}}>Alpha Lyrae Design</h1>}
+            {isWrap && <h3 style={{color:'white'}}>Alpha Lyrae Design</h3>}
             <div>
                 <Selector isMobile={false} config={config} routes={routes} onSelect={handleSelect} depth={1}/>
             </div>
@@ -87,13 +97,13 @@ return (
         left: isMobile ? '0px' : 'auto',
         right:'0px',
         overflow:'hidden'}}>
-        <Button icon={faChevronUp} onClick={() => setShowSubMenu(false)} config={config}  style={{borderRadius:'30px',width:'100px',marginRight:'10px',height: '100%',bottom:'0px'}}/>
+        <div style={{paddingBottom:'10px'}}><Button icon={faChevronUp} onClick={() => setShowSubMenu(false)} config={config}  style={{borderRadius:'30px',width:'100px',marginRight:'10px',height: '100%',bottom:'0px'}}/></div>
         {selectedRoute &&  <Selector 
         isMobile={true} config={config} 
         routes={selectedRoute}
         depth={3}
         CapsuleStyle={{backgroundColor:'white',color:config.colors.secondary}} ActiveButtonStyle={{color:'black'}}
-        style={{position:'relative', background:config.colors.darkAccent,width:'100%',left:'0px'}} 
+        style={{position:'relative', background:config.colors.darkAccent,width:'100%',right:'0px'}} 
         onSelect={() => setTimeout(function() {
             setShowSubMenu(false);
         }, 1000)}

@@ -21,7 +21,7 @@ function Footer() {
             direction={'auto'} 
             enableScrollButtons = {false}
             imageContainerStyle={{height: isMobile ? '0' : '90px', width: isMobile ? '0' : '90px'}}
-            imageStyle={{boxShadow: ` 0px 0px 0px rgba(200, 200, 200,0.3)`}}
+            imageStyle={{boxShadow: ` 0px 0px 0px rgba(200, 200, 200,0.3)`,height: isMobile ? '0' : '90px', width: isMobile ? '0' : '90px'}}
           />
       </Stack>
       

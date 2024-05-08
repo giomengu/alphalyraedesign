@@ -17,18 +17,21 @@ function Card({ image, title, description, buttonText, config,onButtonClick,styl
         background: config.colors.background,
         overflow:'hidden',
         ...style
-        }}>
-    <Stack direction={direction} columnsJustification={columnsJustification} style={{justifyContent: columnsJustification}} enableScrollButtons={scrollable} config={{config}} parentStyle={itemsStyle}>
+        }}
+        className='CardComponent'>
+    <Stack direction={direction} columnsJustification={columnsJustification} style={{justifyContent: columnsJustification,height: '100%'}} enableScrollButtons={scrollable} config={{config}} parentStyle={itemsStyle}>
     {image && (
-          <div style={{ position: 'relative', width: '100%',...imageContainerStyle }}>
+          <div className='imageContainer' style={{position: 'relative', padding:'5px',width: '100%',display:'flex',...imageContainerStyle }}>
             <img src={image} alt={title} style={{
               objectFit: 'cover',
-              borderRadius: '20px',
+              
+              borderRadius: '15px',
               maxHeight: 'calc(100vh - 300px)',
-              width: '100%', // Ensure the image covers the container
+              margin:'5px', // Ensure the image covers the container
               boxShadow: ` -2px -2px 5px rgba(200, 200, 200,0.3), 3px 3px 5px rgba(77, 77, 77, 0.6)`,
               ...imageStyle
             }} />
+
             <div style={{
               position: 'absolute',
               top: '10px',
@@ -38,7 +41,7 @@ function Card({ image, title, description, buttonText, config,onButtonClick,styl
             </div>
           </div>
         )}
-      <div style={{ paddingLeft: direction==='h'? '10px':'0px',padding:'10px',display:'flex',flexDirection:'column',justifyContent:"center",alignItems:'center'}}>
+      <div className='textContainer' style={{ paddingLeft: direction==='h'? '10px':'0px',padding:'10px',display:'flex',flexDirection:'column',justifyContent:"center",alignItems:'center'}}>
         {title && <h3 style={{ color: config.colors.accent,whiteSpace: 'pre-wrap',width:'100%',textAlign:'center', marginBottom:'0px'}}>{title}</h3>}
         <MarkdownComponent markdown={description}/>
         {buttonText && <Button config={config} onClick={onButtonClick}>{buttonText}</Button>}

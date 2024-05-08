@@ -164,25 +164,28 @@ function Stack({ children, direction = 'h', style, title, titleLevel = 'h2', tit
     if (direct === 'v'){
         baseStyle.flexDirection = 'column';
         baseStyle.overflowX = 'auto'; // Enable horizontal scroll on desktop
+        
     }
     if (direct === 'h'){
         baseStyle.flexDirection = 'row';
         baseStyle.overflowY = 'auto'; // Enable vertical scroll on mobile
         
     }
-    if(!enableScrollButtons){
-        baseStyle.overflow = 'hidden';
-        baseStyle.justifyContent = columnsJustification;
-    }else{
+    if(enableScrollButtons && showScrollButtons){
         baseStyle.overflow = 'scroll';
         baseStyle.justifyContent = 'start';
+    }else{
+        baseStyle.overflow = 'hidden';
+        baseStyle.justifyContent = columnsJustification;
     }
     return (
-        <div style={containerStyle}>
+        <div
+        className= 'Stack'
+        style={containerStyle}>
             {title && <TitleTag style={titleStyles}>{title}</TitleTag>}
             <div ref={scrollContainerRef} style={baseStyle}>
                 {React.Children.map(children, child => (
-                    <div className="scrollItem" style={{ scrollSnapAlign: 'center',width:'unset',...parentStyle}}>{child}</div>
+                    <div className="scrollItem" style={{ scrollSnapAlign: 'center',width:'unset',display:'flex',...parentStyle, justifyContent:direct === 'v' ? 'center' : {}}}>{child}</div>
                 ))}
             </div>
             { enableScrollButtons &&

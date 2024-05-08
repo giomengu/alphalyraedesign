@@ -10,7 +10,13 @@ function ProjectsPage() {
     const navigate = useNavigate();
     const isMobile = useResponsive();
     return (
-    <Stack direction="h" style={{backgroundColor:config.colors.darkAccent, height:`calc(100vh - 250px)`}} titleLevel='h1' titlestyle={{color:"white"}} enableScrollButtons='true' config={config}>
+    <Stack 
+    direction="h" 
+    style={{backgroundColor:config.colors.darkAccent, height:`calc(100vh - 250px)`}} 
+    titleLevel='h1' 
+    titlestyle={{color:"white"}} 
+    enableScrollButtons='true' 
+    config={config}>
         {projects.map(card => (
             <Card
                 key={card.id}
@@ -22,7 +28,7 @@ function ProjectsPage() {
                 buttonText={card.buttonText}
                 onButtonClick={() => navigate(`/projects/${card.nameid}`)}
                 direction={'v'} 
-                imageStyle={{maxWidth: isMobile ? '35vh' : '600px',...(isMobile ? { width: '35vh',margin:'auto'} : {})}}
+                imageStyle={{maxWidth: isMobile ? '35vh' : '600px',...(isMobile ? { width: '100%',margin:'auto'} : {})}}
                 itemsStyle={{margin:'auto',width:'100%',height:'100%',display:'flex'}}
                 notificationImage={card.filterImage}
             />

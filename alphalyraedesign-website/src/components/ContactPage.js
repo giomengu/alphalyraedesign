@@ -9,7 +9,13 @@ function ContactPage() {
   };
   const isMobile = useResponsive();
   return (
-      <Stack direction="h" style={{backgroundColor:config.colors.darkAccent, height:`calc(100vh - 250px)`}} titleLevel='h1' titlestyle={{color:"white"}} enableScrollButtons='true' config={config}>
+      <Stack 
+        direction="h" 
+        style={{backgroundColor:config.colors.darkAccent, height:`calc(100vh - 250px)`}} 
+        titleLevel='h1' 
+        titlestyle={{color:"white"}} 
+        enableScrollButtons='true' 
+        config={config}>
         {config.teamCardsData.map(card => (
           <Card
             key={card.id}
@@ -20,9 +26,10 @@ function ContactPage() {
             style={{backgroundColor:'rgba(255,255,255,0.95)',...(isMobile ? { minWidth: '90vw',display: 'flex',justifyContent:'center',alignItems:'center'} : {})}}
             onButtonClick={() => console.log('Clicked', card.title)}
             direction={'v'} 
-            imageStyle={{maxWidth: isMobile ? '35vh' : '300px',...(isMobile ? { maxWidth: '30vh',margin:'auto'} : {})}}
+            //imageStyle={{maxWidth: isMobile ? '35vh' : '300px',...(isMobile ? { maxWidth: '30vh',margin:'auto'} : {})}}
+            //itemsStyle={{margin:'auto',width:'100%',height:'100%',display:'flex'}}
+            imageStyle={{maxWidth: isMobile ? '35vh' : '600px',...(isMobile ? { width: '100%',margin:'auto'} : {})}}
             itemsStyle={{margin:'auto',width:'100%',height:'100%',display:'flex'}}
-
           />
         ))}
       </Stack>
@@ -30,5 +37,3 @@ function ContactPage() {
 }
 
 export default ContactPage;
-
-// Repeat for Gallery.js and Contact.js with appropriate content changes

@@ -66,7 +66,7 @@ const config = {
         },
         {
         id: 1,
-        image: ("https://scontent.fcia7-2.fna.fbcdn.net/v/t39.30808-1/277102492_5360755053946489_4990907134283626138_n.jpg?stp=dst-jpg_p200x200&_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=-h0O8aEcK9QQ7kNvgG_8bNF&_nc_ht=scontent.fcia7-2.fna&oh=00_AfBUvYyv5YzjXOGbzgBDh0LAQ6Ls40Crc9kZziYiM1EAfQ&oe=663AF9DE"),
+        image: ("https://media.licdn.com/dms/image/C4E03AQGK5PcJUz9hxA/profile-displayphoto-shrink_800_800/0/1620821041558?e=2147483647&v=beta&t=VqWKrZe3bKL5TVxopRYlzKnOGgsVy9e7BJNiwiJVvgg"),
         title: 'Giovanni Mengucci',
         description: 
         `
