@@ -17,6 +17,13 @@ const config = {
     fonts: {
       primary: "'Helvetica Neue', Helvetica, Arial, sans-serif"
     },
+    clients:[
+
+    ],
+    mainGallery:[
+      require("../assets/projects/pyrgi580/RIB001-RENDERMODEL-5-3.png"),
+      //require(`../assets/projects/classe950/Class950-1.png`)
+    ],
     cardsData : 
     [
         {

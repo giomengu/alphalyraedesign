@@ -32,7 +32,7 @@ const projects =
                         ]
                         , 
                         buttonText: 'More Info',
-                        markdownFile: `${process.env.PUBLIC_URL}/projects/pyrgi580.md`
+                        markdownFile: `${process.env.PUBLIC_URL}/projects/pyrgi580/pyrgi580.md`
                 },
                 {
                         id: 1,
@@ -45,7 +45,8 @@ const projects =
         
                         Built @ [Wip Performance Boats](https://www.facebook.com/wipboats/)
                         `,
-                        buttonText: 'More Info'
+                        buttonText: 'More Info',
+                        markdownFile: `${process.env.PUBLIC_URL}/projects/pyrgi580/pyrgi580.md`
                 }
         ];
   
