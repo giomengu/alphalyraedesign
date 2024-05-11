@@ -28,7 +28,7 @@ function ContactPage() {
             direction={'v'} 
             //imageStyle={{maxWidth: isMobile ? '35vh' : '300px',...(isMobile ? { maxWidth: '30vh',margin:'auto'} : {})}}
             //itemsStyle={{margin:'auto',width:'100%',height:'100%',display:'flex'}}
-            imageStyle={{maxWidth: isMobile ? '35vh' : '600px',...(isMobile ? { width: '100%',margin:'auto'} : {})}}
+            imageStyle={{maxWidth: isMobile ? '35vh' : '200px',...(isMobile ? { width: '100%',margin:'auto'} : {})}}
             itemsStyle={{margin:'auto',width:'100%',height:'100%',display:'flex'}}
           />
         ))}

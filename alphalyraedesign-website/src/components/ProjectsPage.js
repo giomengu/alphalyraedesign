@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import Stack from './Stack';
 import config from '../assets/config'; // Import the config file
-import projects from '../assets/projects/projectsConfig';
+import usePublic from './usePublicConfig';
 import useResponsive from './useResponsive';
 import { useNavigate } from 'react-router-dom';
 import Button from './Button';
-function ProjectsPage() {
+function ProjectsPage({projectsPath}) {
+    const projects = usePublic(projectsPath);
     const navigate = useNavigate();
     const isMobile = useResponsive();
     return (
@@ -20,7 +21,7 @@ function ProjectsPage() {
         {projects.map(card => (
             <Card
                 key={card.id}
-                image={card.image}
+                image={`${process.env.PUBLIC_URL}/projects/${card.nameid}/${card.image}`}
                 title={card.title}
                 description={card.description}
                 config={config}
@@ -30,7 +31,7 @@ function ProjectsPage() {
                 direction={'v'} 
                 imageStyle={{maxWidth: isMobile ? '35vh' : '600px',...(isMobile ? { width: '100%',margin:'auto'} : {})}}
                 itemsStyle={{margin:'auto',width:'100%',height:'100%',display:'flex'}}
-                notificationImage={card.filterImage}
+                notificationImage={require(`../assets/${card.filterImage}`)}
             />
         
         ))}

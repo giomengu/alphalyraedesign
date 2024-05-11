@@ -48,6 +48,7 @@ const MarkdownComponent = ({ markdown }) => {
   // Custom Table Components
   const Table = ({ children }) => <div style={{backgroundColor:config.colors.secondary,borderRadius:'20px',padding:'2px'}}><table style={{ width: '100%',overflow:'hidden',borderRadius:'20px',borderCollapse:'collapse'}}>{children}</table></div>;
   const TableHead = ({ children }) => <thead>{children}</thead>;
+  const CustomImg = ({ children }) => <p>{children}</p>;
   const TableBody = ({ children }) => <tbody style={{borderColor:'inherit'}}>{children}</tbody>;
   const TableRow = ({ children }) => <tr style={{borderBottom: '1px solid #ececec' }}>{children}</tr>;
   const H1 = ({ children }) => {
@@ -196,7 +197,8 @@ const processText = (text) => {
                       tr: TableRow,
                       th: ({ node, ...props }) => <TableCell isHeader={true} {...props} />,
                       td: TableCell,
-                      hr: CustomHr // Use the custom HR component
+                      hr: CustomHr,
+                      img : CustomImg
                     }}
                 />
             </div>
