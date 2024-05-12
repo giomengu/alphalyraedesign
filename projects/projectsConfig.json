@@ -1,0 +1,22 @@
+[
+        {
+                "id": 0,
+                "nameid":"pyrgi580",
+                "image": "RIB001-RENDERMODEL-5-1.png",
+                "filterImage": "YachtDesign.png",
+                "title": "Pyrgi580 - 2024",
+                "description": "Ciao",
+                "gallery":[
+                        "RIB001-RENDERMODEL-5-1.png",
+                        "RIB001-RENDERMODEL-5-2.png",
+                        "RIB001-RENDERMODEL-5-3.png",
+                        "RIB001-RENDERMODEL-5-4.png",
+                        "RIB001-RENDERMODEL-5-5.png",
+                        "RIB001-RENDERMODEL-5-6.png",
+                        "RIB001-RENDERMODEL-5-7.png"
+                ]
+                , 
+                "buttonText": "More Info",
+                "markdownFile": "pyrgi580.md"
+        }
+]

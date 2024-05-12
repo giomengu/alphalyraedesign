@@ -1,4 +1,7 @@
 [TA-CENTER]
+
+![1715418805612](image/pyrgi580/1715418805612.png)
+
 # #a9d734#Pyrgi 580
 
 The **Pyrgi 580** is a modern and **highly configurable** Work Rib.
@@ -11,7 +14,7 @@ the available **modules** can be combined and mounted on the deck without compro
 
 **Coach Boat** |        **Fishing Boat**           | **Sport Boat**
 
---- 
+---
 
 Check out the configurator!
 
