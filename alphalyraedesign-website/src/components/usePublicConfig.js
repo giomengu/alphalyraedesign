@@ -13,7 +13,10 @@ function usePublic(path='/projects/projectsConfig.js') {
       }
     ];  
     const [projects, setProjects] = useState([]);
-    const pathi = `.${process.env.PUBLIC_URL}${path}`;
+    const pathi = `${process.env.PUBLIC_URL}${path}`;
+    console.log('defPath');
+    console.log(`${process.env.PUBLIC_URL}`);
+    console.log('fullPath');
     console.log(pathi);
     useEffect(() => {  
         fetch(pathi)

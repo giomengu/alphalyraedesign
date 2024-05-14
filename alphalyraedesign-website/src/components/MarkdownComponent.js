@@ -39,7 +39,7 @@ const MarkdownComponent = ({ markdown }) => {
   };
 
   // Custom renderer for paragraph elements to include our style parser
-  const Paragraph = ({ children }) => {
+  const Paragraph = ({ children,filter=''}) => {
     // Convert children to an array and process for custom styles
     const childrenArray = React.Children.toArray(children);
     const styledChildren = parseCustomStyles(childrenArray);
@@ -158,11 +158,18 @@ const MarkdownComponent = ({ markdown }) => {
     }
     return processedSections;
 };
+
 const processText = (text) => {
-  if (!text) return { alignment: 'start', text: '' };  // Default return if no text
+  let returnString = { alignment: 'start', text: '' };
+  if (!text) return returnString;  // Default return if no text
 
   const alignments = [
     { prefix: '[TA-CENTER]', alignment: 'center' },
+    { prefix: '[TA-START]', alignment: 'start' },
+    { prefix: '[TA-END]', alignment: 'end' }
+  ];
+  const sections = [
+    { prefix: '[DESCRIPTION]', alignment: 'center' },
     { prefix: '[TA-START]', alignment: 'start' },
     { prefix: '[TA-END]', alignment: 'end' }
   ];
@@ -182,27 +189,30 @@ const processText = (text) => {
     <Stack style={{width:'100%'}} direction='auto' columnsJustification='space-evenly'>
         {sections.map((section, index) => {
             const { alignment, text } = processText(section.content.trim());
-            return(
-            <div key={index} style={{textAlign:alignment}} >
-                <ReactMarkdown
-                    children={text}
-                    remarkPlugins={[gfm]}
-                    components={{
-                      h1:H1,
-                      p: Paragraph,
-                      a: ButtonRenderer,
-                      table: Table,
-                      thead: TableHead,
-                      tbody: TableBody,
-                      tr: TableRow,
-                      th: ({ node, ...props }) => <TableCell isHeader={true} {...props} />,
-                      td: TableCell,
-                      hr: CustomHr,
-                      img : CustomImg
-                    }}
-                />
-            </div>
-            )
+            if (text && text!==''){
+              return(
+                <div key={index} style={{textAlign:alignment}} >
+                    <ReactMarkdown
+                        children={text}
+                        remarkPlugins={[gfm]}
+                        components={{
+                          h1:H1,
+                          p: Paragraph,
+                          a: ButtonRenderer,
+                          table: Table,
+                          thead: TableHead,
+                          tbody: TableBody,
+                          tr: TableRow,
+                          th: ({ node, ...props }) => <TableCell isHeader={true} {...props} />,
+                          td: TableCell,
+                          hr: CustomHr,
+                          img : CustomImg
+                        }}
+                    />
+                </div>
+                )
+            }
+            
     })}
     </Stack>
 );
