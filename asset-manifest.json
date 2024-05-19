@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/alphalyraedesign/static/css/main.09e6d8ae.css",
-    "main.js": "/alphalyraedesign/static/js/main.81840c8e.js",
-    "static/js/453.543a287b.chunk.js": "/alphalyraedesign/static/js/453.543a287b.chunk.js",
+    "main.js": "/alphalyraedesign/static/js/main.c3e7681f.js",
+    "static/js/488.6a883ee0.chunk.js": "/alphalyraedesign/static/js/488.6a883ee0.chunk.js",
     "static/media/ALPHALYRAE.jpeg": "/alphalyraedesign/static/media/ALPHALYRAE.f7e3065f0bba90772624.jpeg",
     "static/media/ProductDesign.png": "/alphalyraedesign/static/media/ProductDesign.324c55dff9e770fb00ac.png",
     "static/media/projectManagment.png": "/alphalyraedesign/static/media/projectManagment.dc5bc91fa1074babbf36.png",
@@ -10,11 +10,11 @@
     "static/media/3dPrinting.png": "/alphalyraedesign/static/media/3dPrinting.ad8b71d63e851d956ef5.png",
     "index.html": "/alphalyraedesign/index.html",
     "main.09e6d8ae.css.map": "/alphalyraedesign/static/css/main.09e6d8ae.css.map",
-    "main.81840c8e.js.map": "/alphalyraedesign/static/js/main.81840c8e.js.map",
-    "453.543a287b.chunk.js.map": "/alphalyraedesign/static/js/453.543a287b.chunk.js.map"
+    "main.c3e7681f.js.map": "/alphalyraedesign/static/js/main.c3e7681f.js.map",
+    "488.6a883ee0.chunk.js.map": "/alphalyraedesign/static/js/488.6a883ee0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.09e6d8ae.css",
-    "static/js/main.81840c8e.js"
+    "static/js/main.c3e7681f.js"
   ]
 }
