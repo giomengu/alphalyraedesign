@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Card from './Card';
 import Stack from './Stack';
 import config from '../assets/config'; // Import the config file
 import usePublic from './usePublicConfig';
 import useResponsive from './useResponsive';
 import { useNavigate } from 'react-router-dom';
-import Button from './Button';
 function ProjectsPage({projectsPath}) {
     const projects = usePublic(projectsPath);
     const navigate = useNavigate();

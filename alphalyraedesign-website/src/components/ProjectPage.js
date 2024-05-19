@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Stack from './Stack';
 import config from '../assets/config';
 import Gallery from './Gallery';
-import MarkdownComponent from './MarkdownComponent';
 import Card from './Card';
 function ProjectPage({ project }) {
     const [markdownFileContent, setMarkdownFileContent] = useState('');

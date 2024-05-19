@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Button from './Button'; // Assuming Button is your custom button component
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function MultiSelector({ isMobile, config, routes,style, CapsuleStyle,onSelect,ActiveButtonStyle,depth}) {
@@ -71,7 +70,6 @@ function MultiSelector({ isMobile, config, routes,style, CapsuleStyle,onSelect,A
         
         if (ref && ref.current) {
             const { offsetWidth, offsetLeft, offsetTop } = ref.current;
-            console.log(activeRouteName);
             setCapsuleStyle({
                 ...baseCapsuleStyle,
                 width: `${offsetWidth}px`,
@@ -94,7 +92,7 @@ function MultiSelector({ isMobile, config, routes,style, CapsuleStyle,onSelect,A
                     style={activeRoute === route.path ? activeButtonStyle : buttonStyle}
                     onClick={() => handleNavigation(route)}
                 >
-                    {route.icon && <FontAwesomeIcon style={{paddingInline:'20px'}} icon={route.icon} /> || route.label}
+                    {(route.icon && <FontAwesomeIcon style={{paddingInline:'20px'}} icon={route.icon} />) || route.label}
 
                 </button>
             ))}

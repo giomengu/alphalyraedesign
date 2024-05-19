@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import config from '../assets/config'; // Import the config file
 import Button from './Button';
 import Selector from './Selector';
@@ -15,7 +15,6 @@ const sroutes = [
 ];
 function Navigation({routes=sroutes}) {
     const isMobile = useResponsive();
-    const navigate = useNavigate(); // Correctly initialized navigate function from useNavigate hook
     const isWrap = useWrapping(document.querySelector('.navBar'));
     const [selectedRoute, setSelectedRoute] = useState(null);
     const [showSubMenu, setShowSubMenu] = useState(false);

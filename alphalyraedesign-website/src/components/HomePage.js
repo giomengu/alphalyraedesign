@@ -5,9 +5,6 @@ import config from '../assets/config'; // Import the config file
 import useResponsive from './useResponsive';
 
 function Home() {
-  const handleButtonClick = (id) => {
-    console.log('Button clicked for card:', id);
-  };
   const isMobile = useResponsive()
   return (
     <Stack direction="v" style={{backgroundColor:config.colors.background,padding:'0px'}}>
@@ -45,7 +42,7 @@ function Home() {
       {config.clients.length > 0 &&  <Stack 
         direction='h'
         enableScrollButtons='true'
-        style={{backgroundColor:config.colors.accent, width:'100%'}}
+        style={{backgroundColor:config.colors.darkAccent, width:'100%'}}
         config={config}
       >
         {config.clients.map(image => (
@@ -75,7 +72,7 @@ function Home() {
           />
         ))}
       </Stack>
-      <Stack className={'ourTeam'} direction="auto" style={{backgroundColor:config.colors.accent, width:'100%'}} title={"Our Team"} titleLevel='h1' titleStyle={{color:"white"}}>
+      <Stack className={'ourTeam'} direction="auto" style={{backgroundColor:config.colors.darkAccent, width:'100%'}} title={"Our Team"} titleLevel='h1' titleStyle={{color:"white"}}>
         {config.teamCardsData.map(card => (
           <Card
             key={card.id}

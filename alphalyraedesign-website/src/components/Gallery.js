@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import Button from './Button';
 import config from '../assets/config'; // Import the config file
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useResponsive from './useResponsive';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Example icon, replace with the one you need
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'; // Example icon, replace with the one you need
+import { faChevronRight,faChevronLeft} from '@fortawesome/free-solid-svg-icons'; // Example icon, replace with the one you need
 import Stack from './Stack';
 // Define your images here, or you could pass them as props
 const images_standard = [

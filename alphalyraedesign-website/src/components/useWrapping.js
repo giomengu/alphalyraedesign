@@ -29,7 +29,7 @@ function useWrapping(container) {
         handleResize();
 
         return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    }, [container]);
 
     return isWrapped;
 }

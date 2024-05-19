@@ -42,7 +42,7 @@ function Stack({ children, direction = 'h', style, title, titleLevel = 'h2', tit
                 return (childRect.left + tolerance) >= parentRect.left && (childRect.right - tolerance) <= parentRect.right;
                 
             });
-            if(targetIndex != -1){
+            if(targetIndex !== -1){
                 setCurrentItemIndex(targetIndex);
                 if(targetIndex === 0){
                     setIsAtEnd(false);
@@ -67,31 +67,6 @@ function Stack({ children, direction = 'h', style, title, titleLevel = 'h2', tit
             element.removeEventListener('scroll', updateButtonStates);
         };
     }, [children, enableScrollButtons]);
-
-    const scroll1 = (direction) => {
-        const element = scrollContainerRef.current;
-        if (element) {
-            // Get all children that can be snapped
-            const items = Array.from(element.children);
-            setItemCount(items.length)
-            // Find the currently visible item's index
-            if (direction === 'left') {
-                // Move to the previous item
-                if(items[currentItemIndex - 1]){
-                    items[currentItemIndex - 1].scrollIntoView({ behavior: 'smooth', block:'nearest', inline: 'start' });
-                    setCurrentItemIndex(currentItemIndex - 1);
-                }
-                
-            } else if (direction === 'right') {
-                // Move to the next item
-                if(items[currentItemIndex + 1]){
-                    items[currentItemIndex + 1].scrollIntoView({ behavior: 'smooth',  block:'nearest', inline: 'start' });
-                    setCurrentItemIndex(currentItemIndex + 1);
-                }
-            }
-        }
-        
-    };
     const scroll = (direction) => {
         const element = scrollContainerRef.current;
         if (!element) return;

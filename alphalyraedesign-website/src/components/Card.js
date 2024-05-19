@@ -1,10 +1,6 @@
 import React from 'react';
 import Stack from './Stack';
 import Button from './Button';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import rehypeRaw from 'rehype-raw';
-import config from '../assets/config';
 import MarkdownComponent from './MarkdownComponent';
 function Card({ image, title, description, buttonText, config,onButtonClick,style,imageContainerStyle,imageStyle,columnsJustification,direction='h',scrollable=false,itemsStyle,notificationImage}) {
   return (

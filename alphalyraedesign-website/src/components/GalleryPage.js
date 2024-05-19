@@ -1,5 +1,4 @@
 import React from 'react';
-import Card from './Card';
 import Stack from './Stack';
 import config from '../assets/config'; // Import the config file
 import Gallery from './Gallery';

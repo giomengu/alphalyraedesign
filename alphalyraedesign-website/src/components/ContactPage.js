@@ -4,9 +4,6 @@ import Stack from './Stack';
 import config from '../assets/config'; // Import the config file
 import useResponsive from './useResponsive';
 function ContactPage() {
-  const handleButtonClick = (id) => {
-    console.log('Button clicked for card:', id);
-  };
   const isMobile = useResponsive();
   return (
       <Stack 

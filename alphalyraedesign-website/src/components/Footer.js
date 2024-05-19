@@ -4,9 +4,6 @@ import Stack from './Stack';
 import config from '../assets/config'; // Import the config file
 import useResponsive from './useResponsive';
 function Footer() {
-  const handleButtonClick = (id) => {
-    console.log('Button clicked for card:', id);
-  };
   const isMobile = useResponsive();
   return (
       <Stack direction="h" style={{backgroundColor:config.colors.darkAccent, height: isMobile ? `150px` : '150px'}} enableScrollButtons={false}>

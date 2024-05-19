@@ -23,7 +23,7 @@ function usePublic(path='/projects/projectsConfig.js') {
           .then(response => response.json())
           .then(data => setProjects(data))
           .catch(error => setProjects(projectsPh));
-      }, []);
+      }, [pathi]);
 
     return projects;
 }

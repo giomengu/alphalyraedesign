@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'; // Switched to HashRouter
 import Navigation from './components/Navigation';
 import Home from './components/HomePage';
@@ -8,10 +8,7 @@ import config from './assets/config';
 import Footer from './components/Footer';
 import ProjectsPage from './components/ProjectsPage';
 import ProjectPage from './components/ProjectPage';
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faImage } from '@fortawesome/free-solid-svg-icons';
-import { faFolder } from '@fortawesome/free-solid-svg-icons';
+import { faHouse,faUser,faImage,faFolder} from '@fortawesome/free-solid-svg-icons';
 import usePublic from './components/usePublicConfig';
 
 
@@ -34,9 +31,6 @@ function App() {
     },
     { path: '/contact', label: 'Contact',icon:faUser}
   ];
-  const sub = routes.filter(route => route.subPaths).map(route => route.subPaths.map(subPath =>
-    `${route.path}/${subPath.path}`
-  ));
   return (
     <Router> {/* Removed style from here as Router does not accept style prop */}
       <div style={mainContentStyle}>
