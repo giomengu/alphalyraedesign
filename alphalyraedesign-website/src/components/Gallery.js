@@ -59,7 +59,7 @@ function Gallery({modalEnabled=false,style, images=images_standard}) {
         margin: '50px 8px',
         width:'95%',
         overflow: 'auto',
-        
+        background: 'transparent',
         ...style
     };
     

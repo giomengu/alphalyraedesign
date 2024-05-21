@@ -2,19 +2,21 @@ import React from 'react';
 import Card from './Card';
 import Stack from './Stack';
 import config from '../assets/config'; // Import the config file
+import HoverCard from './HoverCard';
 import useResponsive from './useResponsive';
 function ContactPage() {
   const isMobile = useResponsive();
   return (
       <Stack 
         direction="h" 
-        style={{backgroundColor:config.colors.darkAccent, height:`calc(100vh - 250px)`}} 
+        style={{height:`calc(100vh - 250px)`}} 
         titleLevel='h1' 
         titlestyle={{color:"white"}} 
         enableScrollButtons='true' 
-        config={config}>
+        config={config}
+        >
         {config.teamCardsData.map(card => (
-          <Card
+          <HoverCard
             key={card.id}
             image={card.image}
             title={card.title}

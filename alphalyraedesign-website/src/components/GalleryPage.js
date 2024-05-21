@@ -4,7 +4,7 @@ import config from '../assets/config'; // Import the config file
 import Gallery from './Gallery';
 function GalleryPage() {
   return (
-    <Stack direction="v" style={{backgroundColor:config.colors.darkAccent, overflow:'auto',marginTop:'10px'}}>
+    <Stack direction="v" style={{overflow:'auto',marginTop:'10px'}}>
       <Gallery style={{}} modalEnabled={true}> </Gallery>
     </Stack>
       

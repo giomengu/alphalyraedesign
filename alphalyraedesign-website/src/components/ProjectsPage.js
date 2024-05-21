@@ -12,7 +12,7 @@ function ProjectsPage({projectsPath}) {
     return (
     <Stack 
     direction="h" 
-    style={{backgroundColor:config.colors.darkAccent, height:`calc(100vh - 250px)`}} 
+    style={{height:`calc(100vh - 250px)`}} 
     titleLevel='h1' 
     titlestyle={{color:"white"}} 
     enableScrollButtons='true' 

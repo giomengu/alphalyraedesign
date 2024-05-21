@@ -6,7 +6,7 @@ import useResponsive from './useResponsive';
 function Footer() {
   const isMobile = useResponsive();
   return (
-      <Stack direction="h" style={{backgroundColor:config.colors.darkAccent, height: isMobile ? `150px` : '150px'}} enableScrollButtons={false}>
+      <Stack direction="h" style={{height: isMobile ? `150px` : '150px'}} enableScrollButtons={false}>
           <Card
             key={0}
             title={config.footerCardsData.title}

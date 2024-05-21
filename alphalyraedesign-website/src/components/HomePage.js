@@ -3,12 +3,12 @@ import Card from './Card';
 import Stack from './Stack';
 import config from '../assets/config'; // Import the config file
 import useResponsive from './useResponsive';
-
+import HoverCard from './HoverCard';
 function Home() {
   const isMobile = useResponsive()
   return (
-    <Stack direction="v" style={{backgroundColor:config.colors.background,padding:'0px'}}>
-      {false && <Card
+    <Stack direction="v" style={{padding:'0px'}}>
+      {false && <HoverCard
         className={'main'}
         key={0}
         image={'https://scontent.fcia7-1.fna.fbcdn.net/v/t39.30808-6/242629728_5169979393028592_8784995202411991108_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=DROXE1gsCVUQ7kNvgHYQtXE&_nc_ht=scontent.fcia7-1.fna&oh=00_AfAX2AFyg_DPweGvYYD8JZuCqbvahBg6pJobQt7ByZyVKw&oe=663D7E39'}
@@ -26,7 +26,7 @@ function Home() {
       {config.mainGallery.length > 0 &&  <Stack 
         direction='h'
         enableScrollButtons='true'
-        style={{backgroundColor:config.colors.darkAccent, width:'100%'}}
+        style={{width:'100%'}}
         config={config}
       >
         {config.mainGallery.map(image => (
@@ -42,7 +42,7 @@ function Home() {
       {config.clients.length > 0 &&  <Stack 
         direction='h'
         enableScrollButtons='true'
-        style={{backgroundColor:config.colors.darkAccent, width:'100%'}}
+        style={{width:'100%'}}
         config={config}
       >
         {config.clients.map(image => (
@@ -55,9 +55,9 @@ function Home() {
             </div>
         ))}
       </Stack>}
-      <Stack className={'ourServices'} direction="auto" style={{backgroundColor:config.colors.darkAccent, width:'100%'}} title={"Our Services"} titleLevel='h1' titleStyle={{color:"white"}} enableScrollButtons='true' config={config}>
+      <Stack className={'ourServices'} direction="auto" style={{width:'100%'}} title={"Our Services"} titleLevel='h1' titleStyle={{color:"white"}} enableScrollButtons='true' config={config}>
         {config.cardsData.map(card => (
-          <Card
+          <HoverCard
             key={card.id}
             image={card.image}
             title={card.title}
@@ -72,9 +72,9 @@ function Home() {
           />
         ))}
       </Stack>
-      <Stack className={'ourTeam'} direction="auto" style={{backgroundColor:config.colors.darkAccent, width:'100%'}} title={"Our Team"} titleLevel='h1' titleStyle={{color:"white"}}>
+      <Stack className={'ourTeam'} direction="auto" style={{ width:'100%'}} title={"Our Team"} titleLevel='h1' titleStyle={{color:"white"}}>
         {config.teamCardsData.map(card => (
-          <Card
+          <HoverCard
             key={card.id}
             image={card.image}
             title={card.title}

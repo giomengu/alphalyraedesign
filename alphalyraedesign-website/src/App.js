@@ -16,8 +16,7 @@ function App() {
   const projects = usePublic('/projects/projectsConfig.json');
   const mainContentStyle = {
     paddingTop: '100px',  // Adjust this value based on the actual height of your navigation bar
-    background: config.colors.darkAccent,
-    height: `calc(100vh - 150px)`
+    height: '100%'
   };
   const routes = [
     { path: '/', label: 'Home',icon:faHouse },
@@ -33,7 +32,7 @@ function App() {
   ];
   return (
     <Router> {/* Removed style from here as Router does not accept style prop */}
-      <div style={mainContentStyle}>
+      <div style={mainContentStyle} className={`bg-gradient-to-r from-darkAccent to-accent`}>
         <Navigation routes={routes}/>
         <Routes>
           <Route path="/" element={<Home />} exact />

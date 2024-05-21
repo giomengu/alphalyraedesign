@@ -3,7 +3,7 @@ import useResponsive from './useResponsive';
 import Button from './Button';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Example icon, replace with the one you need
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'; // Example icon, replace with the one you need
-function Stack({ children, direction = 'h', style, title, titleLevel = 'h2', titleStyle, enableScrollButtons = false, config,AlignItems,columnsJustification='center',parentStyle}) {
+function Stack({className,children, direction = 'h', style, title, titleLevel = 'h2', titleStyle, enableScrollButtons = false, config,AlignItems,columnsJustification='center',parentStyle}) {
     const isMobile = useResponsive();
     const scrollContainerRef = useRef(null);
     const [showScrollButtons, setShowScrollButtons] = useState(false);
@@ -90,6 +90,7 @@ function Stack({ children, direction = 'h', style, title, titleLevel = 'h2', tit
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+        background: 'transparent',
         ...style
     };
 
@@ -155,7 +156,7 @@ function Stack({ children, direction = 'h', style, title, titleLevel = 'h2', tit
     }
     return (
         <div
-        className= 'Stack'
+        className= {className}
         style={containerStyle}>
             {title && <TitleTag style={titleStyles}>{title}</TitleTag>}
             <div ref={scrollContainerRef} style={baseStyle}>

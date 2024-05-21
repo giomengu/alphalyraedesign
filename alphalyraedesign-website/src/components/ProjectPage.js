@@ -21,7 +21,7 @@ function ProjectPage({ project }) {
     return (
         <Stack 
             direction="v" 
-            style={{backgroundColor:config.colors.darkAccent,marginTop:'10px',width:'100%'}}
+            style={{marginTop:'10px',width:'100%'}}
             title={project.title}
             titleStyle={{color:'white'}}
             justifyContent='center'
@@ -30,7 +30,7 @@ function ProjectPage({ project }) {
             <Stack 
                 direction='h'
                 enableScrollButtons='true'
-                style={{backgroundColor:config.colors.accent, width:'100%'}}
+                style={{width:'100%'}}
                 config={config}
             >
                 {project.gallery && project.gallery.map(image => (
