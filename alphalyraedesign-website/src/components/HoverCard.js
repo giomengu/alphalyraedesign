@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 
 import Stack from './Stack';
 import Button from './Button';
+import HoverButton from './HoverButton';
 import MarkdownComponent from './MarkdownComponent';
 import {
   motion,
@@ -11,17 +12,7 @@ import {
 } from "framer-motion";
 
 function HoverCard({ image, title, description, buttonText, config,onButtonClick,style,imageContainerStyle,imageStyle,columnsJustification,direction='h',scrollable=false,itemsStyle,notificationImage}){
-  return (
-    <div className="grid w-full place-content-center bg-transparent px-10 py-10">
-      <TiltCard />
-    </div>
-  );
-};
-
-
-
-function TiltCard({ image, title, description, buttonText, config,onButtonClick,style,imageContainerStyle,imageStyle,columnsJustification,direction='h',scrollable=false,itemsStyle,notificationImage}){
-  const ROTATION_RANGE = 15;
+  const ROTATION_RANGE = 35;
   const HALF_ROTATION_RANGE = ROTATION_RANGE / 2;
   const ref = useRef(null);
 
@@ -72,7 +63,7 @@ function TiltCard({ image, title, description, buttonText, config,onButtonClick,
         ...style
         
       }}
-      className="relative bg-gradient-to-tl from-blue-50 to-blue-90"
+      className="relative bg-white"
     >
       <Stack direction={direction} columnsJustification={columnsJustification} style={{transform: "translateZ(50px)", transformStyle: "preserve-3d",justifyContent: columnsJustification,height: '100%'}} enableScrollButtons={scrollable} config={{config}} parentStyle={itemsStyle}>
       {image && (
@@ -87,6 +78,7 @@ function TiltCard({ image, title, description, buttonText, config,onButtonClick,
               }} />
 
               <div style={{
+                
                 position: 'absolute',
                 top: '10px',
                 right: '10px'
@@ -95,14 +87,14 @@ function TiltCard({ image, title, description, buttonText, config,onButtonClick,
               </div>
             </div>
           )}
-        <div className='textContainer' style={{ transform: "translateZ(-50px)", paddingLeft: direction==='h'? '10px':'0px',padding:'10px',display:'flex',flexDirection:'column',justifyContent:"center",alignItems:'center'}}>
+        <div className='textContainer' style={{ transform: "translateZ(50px)", paddingLeft: direction==='h'? '10px':'0px',padding:'10px',display:'flex',flexDirection:'column',justifyContent:"center",alignItems:'center'}}>
           {title && <h3 style={{ color: config.colors.accent,whiteSpace: 'pre-wrap',width:'100%',textAlign:'center', marginBottom:'0px'}}>{title}</h3>}
           <MarkdownComponent markdown={description}/>
-          {buttonText && <Button config={config} onClick={onButtonClick}>{buttonText}</Button>}
+          {buttonText && <HoverButton config={config} onClick={onButtonClick}>{buttonText}</HoverButton>}
         </div>
       </Stack>
     </motion.div>
   );
 };
 
-export default TiltCard;
+export default HoverCard;

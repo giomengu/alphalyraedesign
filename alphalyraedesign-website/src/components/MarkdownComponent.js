@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import config from '../assets/config';
 import Button from './Button';
+import HoverButton from './HoverButton';
 import Stack from './Stack';
 import { useNavigate } from 'react-router-dom';
 const MarkdownComponent = ({ markdown }) => {
@@ -115,10 +116,10 @@ const MarkdownComponent = ({ markdown }) => {
       const buttonStyle = buttonProp.split(':')[0]; // Strip "button:" prefix
       const buttonUrl = props.href; // Strip "button:" prefix
       switch(buttonStyle){
-        case '-inline-small' : return <Button style={{display: '',paddingTop:'5px',paddingBottom:'5px'}} config={config} onClick={() => handleNavigation(buttonUrl)}>{buttonText}</Button>;
-        case '-inline' : return <Button style={{display: ''}} config={config} onClick={() =>handleNavigation(buttonUrl)}>{buttonText}</Button>;
+        case '-inline-small' : return <HoverButton className={'inline-flex'} config={config} onClick={() => handleNavigation(buttonUrl)}>{buttonText}</HoverButton>;
+        case '-inline' :       return <HoverButton className={'inline-flex'} style={{display: ''}} config={config} onClick={() =>handleNavigation(buttonUrl)}>{buttonText}</HoverButton>;
       }
-      return <Button config={config} onClick={() => handleNavigation(buttonUrl)}>{buttonText}</Button>;
+      return <HoverButton className={'bg-red'} config={config} onClick={() => handleNavigation(buttonUrl)}>{buttonText}</HoverButton>;
       
     }else{
       return <a href={props.href} target="_blank" rel="noopener noreferrer" style={{ textEmphasis:3, color: config.colors.secondary, textDecoration: 'underline' }}>

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import useResponsive from './useResponsive';
 import Button from './Button';
+import HoverButton from './HoverButton';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Example icon, replace with the one you need
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'; // Example icon, replace with the one you need
 function Stack({className,children, direction = 'h', style, title, titleLevel = 'h2', titleStyle, enableScrollButtons = false, config,AlignItems,columnsJustification='center',parentStyle}) {
@@ -167,13 +168,13 @@ function Stack({className,children, direction = 'h', style, title, titleLevel = 
             { enableScrollButtons &&
                 <div style={{display:'flex',padding:'10px'}}>
                 {config && enableScrollButtons && showScrollButtons && direct === 'h' && 
-                <Button inset={false} icon={faChevronLeft} config={config} style={{...buttonStyle,borderRadius:'20px 0px 0px 20px'}} onClick={() => scroll('left')} disabled={isAtStart}></Button>
+                <HoverButton className={'rounded-r-sm'} inset={false} icon={faChevronLeft} config={config} style={{...buttonStyle,borderRadius:'20px 0px 0px 20px'}} onClick={() => scroll('left')} disabled={isAtStart}></HoverButton>
                 }
                 {!isMobile && config && enableScrollButtons && showScrollButtons && direct === 'h' && 
-                <Button inset={false} config={config} style={{...buttonStyle,borderRadius:'0px 0px 0px 0px'}}>{currentItemIndex+1} of {itemCount}</Button>
+                <HoverButton className={'rounded-l-sm rounded-r-sm'} inset={false} config={config} style={{...buttonStyle,borderRadius:'0px 0px 0px 0px'}}>{currentItemIndex+1} of {itemCount}</HoverButton>
                 }
                 {config && enableScrollButtons && showScrollButtons && direct === 'h' && 
-                <Button inset={false} icon={faChevronRight} config={config} style={{...buttonStyle,borderRadius:'0px 20px 20px 0px'}} onClick={() => scroll('right')} disabled={isAtEnd}></Button>
+                <HoverButton className={'rounded-l-sm'} inset={false} icon={faChevronRight} config={config} style={{...buttonStyle,borderRadius:'0px 20px 20px 0px'}} onClick={() => scroll('right')} disabled={isAtEnd}></HoverButton>
                 }
                 </div>
             }   

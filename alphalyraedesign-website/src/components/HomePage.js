@@ -4,8 +4,11 @@ import Stack from './Stack';
 import config from '../assets/config'; // Import the config file
 import useResponsive from './useResponsive';
 import HoverCard from './HoverCard';
+import usePublic from './usePublicConfig';
 function Home() {
   const isMobile = useResponsive()
+  const projects = usePublic('/projects/projectsConfig.json');
+  const projectGallery = projects.map(project => `${process.env.PUBLIC_URL}/projects/${project.nameid}/${project.image}`);
   return (
     <Stack direction="v" style={{padding:'0px'}}>
       {false && <HoverCard
@@ -23,16 +26,17 @@ function Home() {
         onButtonClick={() => console.log('Clicked', "Chi Siamo")}
         itemsStyle={{margin:'auto',width:'100%',height:'100%'}}
       />}
-      {config.mainGallery.length > 0 &&  <Stack 
+
+      {config.mainGallery.length <= 0 &&  <Stack 
         direction='h'
         enableScrollButtons='true'
         style={{width:'100%'}}
         config={config}
       >
-        {config.mainGallery.map(image => (
+        {projectGallery.map(image => (
             <div>
             <img src={image} alt={'gallery'} style={{
-              padding:'30px',
+              padding:'0px',
               objectFit: 'cover',
               maxWidth: '90vw'
             }} />

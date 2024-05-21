@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Stack from './Stack';
 import config from '../assets/config';
 import Gallery from './Gallery';
+import HoverCard from './HoverCard';
 import Card from './Card';
 function ProjectPage({ project }) {
     const [markdownFileContent, setMarkdownFileContent] = useState('');

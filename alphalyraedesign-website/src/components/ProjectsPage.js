@@ -3,6 +3,8 @@ import Card from './Card';
 import Stack from './Stack';
 import config from '../assets/config'; // Import the config file
 import usePublic from './usePublicConfig';
+import HoverButton from './HoverButton';
+import Button from './Button';
 import useResponsive from './useResponsive';
 import { useNavigate } from 'react-router-dom';
 function ProjectsPage({projectsPath}) {
@@ -34,7 +36,6 @@ function ProjectsPage({projectsPath}) {
             />
         
         ))}
-        
     </Stack>
     );
 }
