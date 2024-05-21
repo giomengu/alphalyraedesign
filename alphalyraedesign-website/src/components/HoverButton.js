@@ -39,14 +39,19 @@ function HoverButton({ className, children, config, onClick, icon ,style,disable
     const standardTail = `
     px-4 py-2 rounded-full
     flex items-center gap-2 
-    text-slate-500
-    shadow-[-2px_-2px_10px_rgba(214,_255,_111,_0.3),_2px_5px_10px_rgba(79,_94,_41,_0.4)]
+    text-white
+    shadow-[-2px_-2px_5px_rgba(214,_255,_111,_0.2),_2px_5px_5px_rgba(79,_94,_41,_0.4)]
     transition-all
     bg-secondary
-    enabled:hover:shadow-[-1px_-1px_5px_rgba(214,_255,_111,_0.6),_1px_1px_5px_rgba(79,_94,_41,_0.4),inset_-2px_-2px_5px_rgba(214,_255,_111,_1),inset_2px_2px_4px_rgba(79,_94,_41,_0.3)]
+    enabled:hover:shadow-[inset_-2px_-2px_5px_rgba(214,_255,_111,_1),inset_2px_2px_5px_rgba(79,_94,_41,_0.4)]
     enabled:hover:text-white
     disabled:bg-slate-400
     disabled:cursor-not-allowed
+    transition 
+    duration-150 
+    ease-in-out 
+    active:translate-y-1
+    motion-reduce:transition-none 
 `;
     return (
         <button

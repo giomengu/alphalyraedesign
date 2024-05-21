@@ -168,13 +168,13 @@ function Stack({className,children, direction = 'h', style, title, titleLevel = 
             { enableScrollButtons &&
                 <div style={{display:'flex',padding:'10px'}}>
                 {config && enableScrollButtons && showScrollButtons && direct === 'h' && 
-                <HoverButton className={'rounded-r-sm'} inset={false} icon={faChevronLeft} config={config} style={{...buttonStyle,borderRadius:'20px 0px 0px 20px'}} onClick={() => scroll('left')} disabled={isAtStart}></HoverButton>
+                <HoverButton className={'rounded-r-none'} icon={faChevronLeft} config={config} style={{...buttonStyle,borderRadius:'20px 0px 0px 20px'}} onClick={() => scroll('left')} disabled={isAtStart}></HoverButton>
                 }
                 {!isMobile && config && enableScrollButtons && showScrollButtons && direct === 'h' && 
-                <HoverButton className={'rounded-l-sm rounded-r-sm'} inset={false} config={config} style={{...buttonStyle,borderRadius:'0px 0px 0px 0px'}}>{currentItemIndex+1} of {itemCount}</HoverButton>
+                <HoverButton className={'rounded-l-none rounded-r-none'} config={config} style={{...buttonStyle,borderRadius:'0px 0px 0px 0px'}}>{currentItemIndex+1} of {itemCount}</HoverButton>
                 }
                 {config && enableScrollButtons && showScrollButtons && direct === 'h' && 
-                <HoverButton className={'rounded-l-sm'} inset={false} icon={faChevronRight} config={config} style={{...buttonStyle,borderRadius:'0px 20px 20px 0px'}} onClick={() => scroll('right')} disabled={isAtEnd}></HoverButton>
+                <HoverButton className={'rounded-l-none'} icon={faChevronRight} config={config} style={{...buttonStyle,borderRadius:'0px 20px 20px 0px'}} onClick={() => scroll('right')} disabled={isAtEnd}></HoverButton>
                 }
                 </div>
             }   
