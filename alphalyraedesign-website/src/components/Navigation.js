@@ -5,7 +5,7 @@ import HoverButton from './HoverButton';
 import Selector from './Selector';
 import useResponsive from './useResponsive'; // Assume useResponsive is in a separate file
 import useWrapping from './useWrapping';
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronUp,faLock} from '@fortawesome/free-solid-svg-icons';
 import { motion,AnimatePresence } from 'framer-motion';
 
 const sroutes = [
@@ -98,7 +98,7 @@ return (
             }
             {!isMobile && <h1 className="text-white">Alpha Lyrae Design</h1>}
             {isWrap && <h3 className="text-white">Alpha Lyrae Design</h3>}
-            <div>
+            <div className='flex'>
                 <Selector isMobile={false} config={config} routes={routes} onSelect={handleSelect} depth={1}/>
             </div>
             

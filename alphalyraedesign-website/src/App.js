@@ -4,14 +4,13 @@ import Navigation from './components/Navigation';
 import Home from './components/HomePage';
 import Gallery from './components/GalleryPage';
 import Contact from './components/ContactPage';
-import config from './assets/config';
 import Footer from './components/Footer';
 import ProjectsPage from './components/ProjectsPage';
 import ProjectPage from './components/ProjectPage';
-import { faHouse,faUser,faImage,faFolder} from '@fortawesome/free-solid-svg-icons';
+import { faHouse,faUser,faImage,faFolder,faLock} from '@fortawesome/free-solid-svg-icons';
 import usePublic from './components/usePublicConfig';
-
-
+import PrivePage from './components/PrivePage';
+import { AuthProvider } from './components/AuthProvider';
 function App() {
   const projects = usePublic('/projects/projectsConfig.json');
   const mainContentStyle = {
@@ -28,9 +27,11 @@ function App() {
         project}
       )),
     },
-    { path: '/contact', label: 'Contact',icon:faUser}
+    { path: '/contact', label: 'Contact',icon:faUser},
+    { path: '/private', label: 'Private',icon:faLock}
   ];
   return (
+    <AuthProvider>
     <Router> {/* Removed style from here as Router does not accept style prop */}
       <div style={mainContentStyle} className={`bg-gradient-to-r from-darkAccent to-accent`}>
         <Navigation routes={routes}/>
@@ -42,10 +43,12 @@ function App() {
           {routes.filter(route => route.subPaths).map(route => route.subPaths.map(subPath =>
             (<Route path= {subPath.path} element={<route.standardPage project={subPath.project} />} />)
           ))}
+          <Route path="/private" element={<PrivePage />} />
         </Routes>
         <Footer />
       </div>
     </Router>
+    </AuthProvider>
   );
 }
 
