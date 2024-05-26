@@ -3,7 +3,9 @@ import Stack from './Stack';
 import config from '../assets/config';
 import Gallery from './Gallery';
 import HoverCard from './HoverCard';
+import Viewer from './3dViewer';
 import Card from './Card';
+import ExampleWrapper from './SpringModal';
 function ProjectPage({ project }) {
     const [markdownFileContent, setMarkdownFileContent] = useState('');
     if (!project) {
@@ -18,6 +20,7 @@ function ProjectPage({ project }) {
         
     };
     const projectGallery = project.gallery.map(image => `${process.env.PUBLIC_URL}/projects/${project.nameid}/${image}`);
+    const project3dModel = `${process.env.PUBLIC_URL}/projects/${project.nameid}/3dModels/model.glb`;
     fetchMarkdown(`${process.env.PUBLIC_URL}/projects/${project.nameid}/${project.markdownFile}`);
     return (
         <Stack 
@@ -51,7 +54,7 @@ function ProjectPage({ project }) {
             {!project.markdown && project.markdownFile &&
                 <Card config={config} style={{width:'fit-content'}} direction='h' description={markdownFileContent}/>
             }
-            
+            {project3dModel && <Viewer modelUrl={project3dModel}/>}
             {project.gallery && <Gallery style={{}} modalEnabled={true} images={projectGallery}> </Gallery>}
         </Stack>
     );

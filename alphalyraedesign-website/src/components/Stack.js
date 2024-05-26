@@ -110,7 +110,6 @@ function Stack({className,children, direction = 'h', style, title, titleLevel = 
         position: 'relative',
         border: 'none',
         padding: '10px 20px',
-        zIndex: 10
     };
 
     const TitleTag = `${titleLevel}`;

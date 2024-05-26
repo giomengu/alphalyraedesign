@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Children } from 'react';
 import Stack from './Stack';
 import Button from './Button';
 import HoverButton from './HoverButton';
 import MarkdownComponent from './MarkdownComponent';
-function Card({ image, title, description, buttonText, config,onButtonClick,style,imageContainerStyle,imageStyle,columnsJustification,direction='h',scrollable=false,itemsStyle,notificationImage}) {
+function Card({ children,image, title, description, buttonText, config,onButtonClick,style,imageContainerStyle,imageStyle,columnsJustification,direction='h',scrollable=false,itemsStyle,notificationImage}) {
   return (
     <div style={{ 
         minWidth: '200px',
@@ -40,9 +40,10 @@ function Card({ image, title, description, buttonText, config,onButtonClick,styl
         )}
       <div className='textContainer' style={{ paddingLeft: direction==='h'? '10px':'0px',padding:'10px',display:'flex',flexDirection:'column',justifyContent:"center",alignItems:'center'}}>
         {title && <h3 style={{ color: config.colors.accent,whiteSpace: 'pre-wrap',width:'100%',textAlign:'center', marginBottom:'0px'}}>{title}</h3>}
-        <MarkdownComponent markdown={description}/>
+        {description && <MarkdownComponent markdown={description}/>}
         {buttonText && <HoverButton config={config} onClick={onButtonClick}>{buttonText}</HoverButton>}
       </div>
+      {children}
     </Stack>
     </div>
   );

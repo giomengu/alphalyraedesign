@@ -57,7 +57,7 @@ function HoverButton({ className, children, config, onClick, icon ,style,disable
         <button
         disabled={disabled}
         className={standardTail+className}
-        
+        style={style}
         onClick={onClick}
         >
         {icon && <FontAwesomeIcon icon={icon} style={{ marginRight: '0px',marginLeft: '0px',width:'20px'}} />}
