@@ -18,5 +18,20 @@
                 , 
                 "buttonText": "More Info",
                 "markdownFile": "pyrgi580.md"
+        },
+        {
+                "id": 1,
+                "nameid":"multiGameboy",
+                "image": "IMG1.png",
+                "filterImage": "3dPrinting.png",
+                "title": "multiGameboy - 2024",
+                "description": "nke - multidisplay Gameboy",
+                "gallery":[
+                        "IMG1.png",
+                        "IMG2.png"
+                ]
+                , 
+                "buttonText": "More Info",
+                "markdownFile": "multi.md"
         }
 ]

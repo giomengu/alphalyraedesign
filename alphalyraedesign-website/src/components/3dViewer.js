@@ -138,7 +138,7 @@ function Viewer({ modelUrl }) {
             <ambientLight intensity={2}/>
             <pointLight intensity={25} color={'#ffeec5'} position={[2,1,3]}/>
             <pointLight intensity={25} color={'#ffeec5'} position={[2,-1,-3]}/>
-            {loaded && !showFrostedLayer && <ControlledOrbitControls scrollY={scrollY} enable={!isFullScreen} initialCameraPosition = {{ x: 2, y: 3, z: 5}} initialCameraTarget = {{ x: 2, y: 0.5, z: 0}}/>}
+            {loaded && !showFrostedLayer && <ControlledOrbitControls scrollY={scrollY} enable={!isFullScreen} initialCameraPosition = {{ x: 5, y: 2, z: 3}} initialCameraTarget = {{ x: 3, y: 0.5, z: 0}}/>}
             <Model url={modelUrl} />
           </Canvas>
 

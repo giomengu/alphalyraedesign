@@ -36,6 +36,7 @@ function ProjectPage({ project }) {
                 enableScrollButtons='true'
                 style={{width:'100%'}}
                 config={config}
+                autoScroll={true}
             >
                 {project.gallery && project.gallery.map(image => (
                     <div>

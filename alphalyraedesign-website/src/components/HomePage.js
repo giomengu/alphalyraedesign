@@ -10,7 +10,7 @@ function Home() {
   const projects = usePublic('/projects/projectsConfig.json');
   const projectGallery = projects.map(project => `${process.env.PUBLIC_URL}/projects/${project.nameid}/${project.image}`);
   return (
-    <Stack direction="v" style={{padding:'0px'}}>
+    <Stack direction="v" style={{padding:'0px',marginTop:'10px'}}>
       {false && <HoverCard
         className={'main'}
         key={0}
@@ -35,11 +35,7 @@ function Home() {
       >
         {projectGallery.map(image => (
             <div>
-            <img src={image} alt={'gallery'} style={{
-              padding:'0px',
-              objectFit: 'cover',
-              maxWidth: '90vw'
-            }} />
+            <img src={image} alt={'gallery'} className='m-10 p-0 object-cover max-w-[90vw] rounded-[30px] shadow-[-2px_-2px_10px_rgba(255,_255,255,_0.1),_2px_5px_5px_rgba(0,0,0,_0.2)]' />
             </div>
         ))}
       </Stack>}
