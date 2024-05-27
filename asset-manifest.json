@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/alphalyraedesign/static/css/main.a35abdf4.css",
-    "main.js": "/alphalyraedesign/static/js/main.0f5c72da.js",
+    "main.css": "/alphalyraedesign/static/css/main.87eb165c.css",
+    "main.js": "/alphalyraedesign/static/js/main.948fee2d.js",
     "static/js/488.6a883ee0.chunk.js": "/alphalyraedesign/static/js/488.6a883ee0.chunk.js",
     "static/media/ALPHALYRAE.jpeg": "/alphalyraedesign/static/media/ALPHALYRAE.f7e3065f0bba90772624.jpeg",
     "static/media/ProductDesign.png": "/alphalyraedesign/static/media/ProductDesign.324c55dff9e770fb00ac.png",
@@ -9,12 +9,12 @@
     "static/media/YachtDesign.png": "/alphalyraedesign/static/media/YachtDesign.88d1c8ec1b542ecfe446.png",
     "static/media/3dPrinting.png": "/alphalyraedesign/static/media/3dPrinting.ad8b71d63e851d956ef5.png",
     "index.html": "/alphalyraedesign/index.html",
-    "main.a35abdf4.css.map": "/alphalyraedesign/static/css/main.a35abdf4.css.map",
-    "main.0f5c72da.js.map": "/alphalyraedesign/static/js/main.0f5c72da.js.map",
+    "main.87eb165c.css.map": "/alphalyraedesign/static/css/main.87eb165c.css.map",
+    "main.948fee2d.js.map": "/alphalyraedesign/static/js/main.948fee2d.js.map",
     "488.6a883ee0.chunk.js.map": "/alphalyraedesign/static/js/488.6a883ee0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a35abdf4.css",
-    "static/js/main.0f5c72da.js"
+    "static/css/main.87eb165c.css",
+    "static/js/main.948fee2d.js"
   ]
 }
