@@ -1,12 +1,14 @@
 import React from 'react';
 import Stack from './Stack';
-import config from '../assets/config'; // Import the config file
 import Gallery from './Gallery';
-import axios from 'axios';
-function GalleryPage() {
+import useGalleryI from './useGallery';
+function GalleryPage()
+{
+  const aa = useGalleryI()
+  console.log(aa);
   return (
     <Stack direction="v" style={{overflow:'auto',marginTop:'10px'}}>
-      <Gallery style={{}} modalEnabled={true}></Gallery>
+      <Gallery style={{}} images={aa} modalEnabled={true}></Gallery>
     </Stack>
       
     );

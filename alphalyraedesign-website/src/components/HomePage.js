@@ -63,10 +63,10 @@ function Home() {
             title={card.title}
             description={card.description}
             config={config}
-            direction='auto-inv'
-            buttonText={card.buttonText}
+            direction='v'
+            //buttonText={card.buttonText}
             onButtonClick={() => console.log('Clicked', card.title)}
-            imageStyle={{width:"150px"}}
+            imageStyle={{maxWidth: isMobile ? '35vw' : '200px',...(isMobile ? { width: '100%',margin:'auto'} : {})}}
             style={{backgroundColor:'rgba(255,255,255,0.95)'}}
             itemsStyle={{margin:'auto',width:'100%',height:'100%'}}
           />
