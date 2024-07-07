@@ -1,20 +1,29 @@
 {
   "files": {
-    "main.css": "/alphalyraedesign/static/css/main.87eb165c.css",
-    "main.js": "/alphalyraedesign/static/js/main.948fee2d.js",
+    "main.css": "/alphalyraedesign/static/css/main.32f74453.css",
+    "main.js": "/alphalyraedesign/static/js/main.029e92c0.js",
     "static/js/488.6a883ee0.chunk.js": "/alphalyraedesign/static/js/488.6a883ee0.chunk.js",
+    "static/media/IMG_9548.jpeg": "/alphalyraedesign/static/media/IMG_9548.0283c6612198dc6299af.jpeg",
+    "static/media/B6E5D839-41D6-4BC8-945E-3784CF4B47D3.jpeg": "/alphalyraedesign/static/media/B6E5D839-41D6-4BC8-945E-3784CF4B47D3.47748e5e9d2773249194.jpeg",
+    "static/media/CAE32E3A-E871-4D60-B514-CB36588E379E.jpeg": "/alphalyraedesign/static/media/CAE32E3A-E871-4D60-B514-CB36588E379E.920b09f5d1b388ee9486.jpeg",
+    "static/media/54FD7729-F50F-42F9-A991-F335D84E82ED.jpeg": "/alphalyraedesign/static/media/54FD7729-F50F-42F9-A991-F335D84E82ED.8924bc5346b63198fc92.jpeg",
+    "static/media/53358435-B0EA-4D4F-8193-546C3EF79C3B.jpeg": "/alphalyraedesign/static/media/53358435-B0EA-4D4F-8193-546C3EF79C3B.69ecc913714d9acda1ac.jpeg",
+    "static/media/f0ff5e0e-157d-44f4-b808-1e9deafce019.jpeg": "/alphalyraedesign/static/media/f0ff5e0e-157d-44f4-b808-1e9deafce019.37a5d563297964023327.jpeg",
     "static/media/ALPHALYRAE.jpeg": "/alphalyraedesign/static/media/ALPHALYRAE.f7e3065f0bba90772624.jpeg",
+    "static/media/52fddebf-eaa5-490a-b6ec-a1dc4399c3f1.jpeg": "/alphalyraedesign/static/media/52fddebf-eaa5-490a-b6ec-a1dc4399c3f1.8383b3b5abd79f354be8.jpeg",
+    "static/media/a3dd4671-7023-45de-aed7-c439d5e99b46.jpeg": "/alphalyraedesign/static/media/a3dd4671-7023-45de-aed7-c439d5e99b46.eded818700537b248e2b.jpeg",
+    "static/media/527f2f60-fb64-4618-8d5c-8a55492fed42.jpeg": "/alphalyraedesign/static/media/527f2f60-fb64-4618-8d5c-8a55492fed42.a7471c5b49b4a1f6643e.jpeg",
     "static/media/ProductDesign.png": "/alphalyraedesign/static/media/ProductDesign.324c55dff9e770fb00ac.png",
     "static/media/projectManagment.png": "/alphalyraedesign/static/media/projectManagment.dc5bc91fa1074babbf36.png",
     "static/media/YachtDesign.png": "/alphalyraedesign/static/media/YachtDesign.88d1c8ec1b542ecfe446.png",
     "static/media/3dPrinting.png": "/alphalyraedesign/static/media/3dPrinting.ad8b71d63e851d956ef5.png",
     "index.html": "/alphalyraedesign/index.html",
-    "main.87eb165c.css.map": "/alphalyraedesign/static/css/main.87eb165c.css.map",
-    "main.948fee2d.js.map": "/alphalyraedesign/static/js/main.948fee2d.js.map",
+    "main.32f74453.css.map": "/alphalyraedesign/static/css/main.32f74453.css.map",
+    "main.029e92c0.js.map": "/alphalyraedesign/static/js/main.029e92c0.js.map",
     "488.6a883ee0.chunk.js.map": "/alphalyraedesign/static/js/488.6a883ee0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.87eb165c.css",
-    "static/js/main.948fee2d.js"
+    "static/css/main.32f74453.css",
+    "static/js/main.029e92c0.js"
   ]
 }
